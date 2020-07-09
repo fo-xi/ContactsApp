@@ -215,6 +215,7 @@
             this.AddEditContactOKButton.TabIndex = 14;
             this.AddEditContactOKButton.Text = "OK";
             this.AddEditContactOKButton.UseVisualStyleBackColor = true;
+            this.AddEditContactOKButton.Click += new System.EventHandler(this.AddEditContactOKButton_Click);
             // 
             // AddEditCancelButton
             // 
@@ -225,6 +226,7 @@
             this.AddEditCancelButton.TabIndex = 15;
             this.AddEditCancelButton.Text = "Cancel";
             this.AddEditCancelButton.UseVisualStyleBackColor = true;
+            this.AddEditCancelButton.Click += new System.EventHandler(this.AddEditCancelButton_Click);
             // 
             // AddEditContact
             // 

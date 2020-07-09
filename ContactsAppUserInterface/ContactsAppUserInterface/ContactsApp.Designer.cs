@@ -216,6 +216,7 @@
             this.ContactsAppAddButton.TabIndex = 18;
             this.ContactsAppAddButton.Text = "Add";
             this.ContactsAppAddButton.UseVisualStyleBackColor = true;
+            this.ContactsAppAddButton.Click += new System.EventHandler(this.ContactsAppAddButton_Click);
             // 
             // ContactsAppEditButton
             // 
@@ -228,6 +229,7 @@
             this.ContactsAppEditButton.TabIndex = 19;
             this.ContactsAppEditButton.Text = "Edit";
             this.ContactsAppEditButton.UseVisualStyleBackColor = true;
+            this.ContactsAppEditButton.Click += new System.EventHandler(this.ContactsAppEditButton_Click);
             // 
             // ContactsAppRemoveButton
             // 
@@ -240,6 +242,7 @@
             this.ContactsAppRemoveButton.TabIndex = 20;
             this.ContactsAppRemoveButton.Text = "Remove";
             this.ContactsAppRemoveButton.UseVisualStyleBackColor = true;
+            this.ContactsAppRemoveButton.Click += new System.EventHandler(this.ContactsAppRemoveButton_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -284,6 +287,7 @@
             this.ContactsAppAllContactsListBox.ScrollAlwaysVisible = true;
             this.ContactsAppAllContactsListBox.Size = new System.Drawing.Size(298, 316);
             this.ContactsAppAllContactsListBox.TabIndex = 17;
+            this.ContactsAppAllContactsListBox.SelectedIndexChanged += new System.EventHandler(this.ContactsAppAllContactsListBox_SelectedIndexChanged);
             // 
             // ContactsAppFindlabel
             // 

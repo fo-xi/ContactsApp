@@ -55,5 +55,12 @@ namespace ContactsApp
                      initialLength + " " + "to" + " " + finalLength);
             }
         }
+        public static void AssertEmptyString(ref string value)
+        {
+            if ((value.Length == 0))
+            {
+                throw new ArgumentException("Empty string");
+            }
+        }
     }
 }

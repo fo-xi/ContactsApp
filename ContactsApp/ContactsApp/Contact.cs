@@ -42,6 +42,7 @@ namespace ContactsApp
             }
             set
             {
+                Validator.AssertEmptyString(ref value);
                 Validator.AssertStringInRange(ref value, 0, 50);
                 _surname = Validator.MakeUpperCase(value);
             }
@@ -57,6 +58,7 @@ namespace ContactsApp
             }
             set
             {
+                Validator.AssertEmptyString(ref value);
                 Validator.AssertStringInRange(ref value, 0, 50);
                 _name = Validator.MakeUpperCase(value);
             }
@@ -96,6 +98,7 @@ namespace ContactsApp
             }
             set
             {
+                Validator.AssertEmptyString(ref value);
                 Validator.AssertStringInRange(ref value, 0, 50);
                 _email = value;
             }
@@ -111,6 +114,7 @@ namespace ContactsApp
             }
             set
             {
+                Validator.AssertEmptyString(ref value);
                 Validator.AssertStringInRange(ref value, 0, 15);
                 _vkID = value;
             }
