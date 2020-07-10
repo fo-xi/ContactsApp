@@ -55,7 +55,7 @@
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(319, 20);
             this.SurnameTextBox.TabIndex = 0;
-            this.SurnameTextBox.TextChanged += new System.EventHandler(this.AddEditContactSurnameTextBox_TextChanged);
+            this.SurnameTextBox.TextChanged += new System.EventHandler(this.SurnameTextBox_TextChanged);
             // 
             // NameTextBox
             // 
@@ -64,7 +64,7 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(319, 20);
             this.NameTextBox.TabIndex = 1;
-            this.NameTextBox.TextChanged += new System.EventHandler(this.AddEditContactNameTextBox_TextChanged);
+            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // BirthdayDateTimePicker
             // 
@@ -81,7 +81,7 @@
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(319, 20);
             this.PhoneTextBox.TabIndex = 3;
-            this.PhoneTextBox.TextChanged += new System.EventHandler(this.AddEditContactPhoneTextBox_TextChanged);
+            this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             // 
             // EmailTextBox
             // 
@@ -90,7 +90,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(319, 20);
             this.EmailTextBox.TabIndex = 4;
-            this.EmailTextBox.TextChanged += new System.EventHandler(this.AddEditContactEmailTextBox_TextChanged);
+            this.EmailTextBox.TextChanged += new System.EventHandler(this.EmailTextBox_TextChanged);
             // 
             // VkIDTextBox
             // 
@@ -99,7 +99,7 @@
             this.VkIDTextBox.Name = "VkIDTextBox";
             this.VkIDTextBox.Size = new System.Drawing.Size(319, 20);
             this.VkIDTextBox.TabIndex = 5;
-            this.VkIDTextBox.TextChanged += new System.EventHandler(this.AddEditContactVkIDTextBox_TextChanged);
+            this.VkIDTextBox.TextChanged += new System.EventHandler(this.VkIDTextBox_TextChanged);
             // 
             // SurnameLabel
             // 
@@ -220,7 +220,7 @@
             this.CancelButton.TabIndex = 15;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.AddEditCancelButton_Click);
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // OKButton
             // 
@@ -231,7 +231,7 @@
             this.OKButton.TabIndex = 14;
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
-            this.OKButton.Click += new System.EventHandler(this.AddEditContactOKButton_Click);
+            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
             // ContactForm
             // 

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AboutContactsAppLabel = new System.Windows.Forms.Label();
-            this.AboutVersionLabel = new System.Windows.Forms.Label();
-            this.AboutAuthorLabel = new System.Windows.Forms.Label();
-            this.AboutEmailLabel = new System.Windows.Forms.Label();
-            this.AboutGitHubLabel = new System.Windows.Forms.Label();
+            this.ContactsAppLabel = new System.Windows.Forms.Label();
+            this.VersionLabel = new System.Windows.Forms.Label();
+            this.AuthorLabel = new System.Windows.Forms.Label();
+            this.EmailLabel = new System.Windows.Forms.Label();
+            this.GitHubLabel = new System.Windows.Forms.Label();
             this.About2020Label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,59 +46,59 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // AboutContactsAppLabel
+            // ContactsAppLabel
             // 
-            this.AboutContactsAppLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.AboutContactsAppLabel.AutoSize = true;
-            this.AboutContactsAppLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.AboutContactsAppLabel.Location = new System.Drawing.Point(3, 4);
-            this.AboutContactsAppLabel.Name = "AboutContactsAppLabel";
-            this.AboutContactsAppLabel.Size = new System.Drawing.Size(148, 26);
-            this.AboutContactsAppLabel.TabIndex = 0;
-            this.AboutContactsAppLabel.Text = "ContactsApp";
+            this.ContactsAppLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ContactsAppLabel.AutoSize = true;
+            this.ContactsAppLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.ContactsAppLabel.Location = new System.Drawing.Point(3, 4);
+            this.ContactsAppLabel.Name = "ContactsAppLabel";
+            this.ContactsAppLabel.Size = new System.Drawing.Size(148, 26);
+            this.ContactsAppLabel.TabIndex = 0;
+            this.ContactsAppLabel.Text = "ContactsApp";
             // 
-            // AboutVersionLabel
+            // VersionLabel
             // 
-            this.AboutVersionLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.AboutVersionLabel.AutoSize = true;
-            this.AboutVersionLabel.Location = new System.Drawing.Point(3, 4);
-            this.AboutVersionLabel.Name = "AboutVersionLabel";
-            this.AboutVersionLabel.Size = new System.Drawing.Size(43, 13);
-            this.AboutVersionLabel.TabIndex = 1;
-            this.AboutVersionLabel.Text = "v. 1.0.0";
+            this.VersionLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.VersionLabel.AutoSize = true;
+            this.VersionLabel.Location = new System.Drawing.Point(3, 4);
+            this.VersionLabel.Name = "VersionLabel";
+            this.VersionLabel.Size = new System.Drawing.Size(43, 13);
+            this.VersionLabel.TabIndex = 1;
+            this.VersionLabel.Text = "v. 1.0.0";
             // 
-            // AboutAuthorLabel
+            // AuthorLabel
             // 
-            this.AboutAuthorLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.AboutAuthorLabel.AutoSize = true;
-            this.AboutAuthorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.AboutAuthorLabel.Location = new System.Drawing.Point(3, 5);
-            this.AboutAuthorLabel.Name = "AboutAuthorLabel";
-            this.AboutAuthorLabel.Size = new System.Drawing.Size(173, 17);
-            this.AboutAuthorLabel.TabIndex = 2;
-            this.AboutAuthorLabel.Text = "Author: Alexandra Dyagay";
+            this.AuthorLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.AuthorLabel.AutoSize = true;
+            this.AuthorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.AuthorLabel.Location = new System.Drawing.Point(3, 5);
+            this.AuthorLabel.Name = "AuthorLabel";
+            this.AuthorLabel.Size = new System.Drawing.Size(173, 17);
+            this.AuthorLabel.TabIndex = 2;
+            this.AuthorLabel.Text = "Author: Alexandra Dyagay";
             // 
-            // AboutEmailLabel
+            // EmailLabel
             // 
-            this.AboutEmailLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.AboutEmailLabel.AutoSize = true;
-            this.AboutEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.AboutEmailLabel.Location = new System.Drawing.Point(3, 4);
-            this.AboutEmailLabel.Name = "AboutEmailLabel";
-            this.AboutEmailLabel.Size = new System.Drawing.Size(268, 17);
-            this.AboutEmailLabel.TabIndex = 3;
-            this.AboutEmailLabel.Text = "e-mail for feedback: dyagaay@gmail.com";
+            this.EmailLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.EmailLabel.AutoSize = true;
+            this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.EmailLabel.Location = new System.Drawing.Point(3, 4);
+            this.EmailLabel.Name = "EmailLabel";
+            this.EmailLabel.Size = new System.Drawing.Size(268, 17);
+            this.EmailLabel.TabIndex = 3;
+            this.EmailLabel.Text = "e-mail for feedback: dyagaay@gmail.com";
             // 
-            // AboutGitHubLabel
+            // GitHubLabel
             // 
-            this.AboutGitHubLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.AboutGitHubLabel.AutoSize = true;
-            this.AboutGitHubLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.AboutGitHubLabel.Location = new System.Drawing.Point(3, 31);
-            this.AboutGitHubLabel.Name = "AboutGitHubLabel";
-            this.AboutGitHubLabel.Size = new System.Drawing.Size(202, 17);
-            this.AboutGitHubLabel.TabIndex = 4;
-            this.AboutGitHubLabel.Text = "GitHub: https://github.com/fo-xi";
+            this.GitHubLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.GitHubLabel.AutoSize = true;
+            this.GitHubLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.GitHubLabel.Location = new System.Drawing.Point(3, 31);
+            this.GitHubLabel.Name = "GitHubLabel";
+            this.GitHubLabel.Size = new System.Drawing.Size(202, 17);
+            this.GitHubLabel.TabIndex = 4;
+            this.GitHubLabel.Text = "GitHub: https://github.com/fo-xi";
             // 
             // About2020Label
             // 
@@ -128,8 +128,8 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.AboutEmailLabel, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.AboutGitHubLabel, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.EmailLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.GitHubLabel, 0, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(41, 156);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -142,7 +142,7 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.AboutAuthorLabel, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.AuthorLabel, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(41, 101);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -154,7 +154,7 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.AboutContactsAppLabel, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.ContactsAppLabel, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(41, 29);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
@@ -166,7 +166,7 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.AboutVersionLabel, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.VersionLabel, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(41, 62);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
@@ -204,11 +204,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label AboutContactsAppLabel;
-        private System.Windows.Forms.Label AboutVersionLabel;
-        private System.Windows.Forms.Label AboutAuthorLabel;
-        private System.Windows.Forms.Label AboutEmailLabel;
-        private System.Windows.Forms.Label AboutGitHubLabel;
+        private System.Windows.Forms.Label ContactsAppLabel;
+        private System.Windows.Forms.Label VersionLabel;
+        private System.Windows.Forms.Label AuthorLabel;
+        private System.Windows.Forms.Label EmailLabel;
+        private System.Windows.Forms.Label GitHubLabel;
         private System.Windows.Forms.Label About2020Label;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;

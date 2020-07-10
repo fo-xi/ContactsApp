@@ -18,7 +18,7 @@ namespace ContactsAppUserInterface
         {
             InitializeComponent();
         }
-        private void AddEditContactOKButton_Click(object sender, EventArgs e)
+        private void OKButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace ContactsAppUserInterface
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void AddEditCancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -51,7 +51,7 @@ namespace ContactsAppUserInterface
                 VkIDTextBox.Text = Contact.VKID;
             }
         }
-        private void AddEditContactSurnameTextBox_TextChanged(object sender, EventArgs e)
+        private void SurnameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace ContactsAppUserInterface
                 SurnameTextBox.BackColor = Color.LightSalmon;
             }
         }
-        private void AddEditContactNameTextBox_TextChanged(object sender, EventArgs e)
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace ContactsAppUserInterface
                 NameTextBox.BackColor = Color.LightSalmon;
             }
         }
-        private void AddEditContactEmailTextBox_TextChanged(object sender, EventArgs e)
+        private void EmailTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace ContactsAppUserInterface
                 EmailTextBox.BackColor = Color.LightSalmon;
             }
         }
-        private void AddEditContactPhoneTextBox_TextChanged(object sender, EventArgs e)
+        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace ContactsAppUserInterface
                 PhoneTextBox.BackColor = Color.LightSalmon;
             }
         }
-        private void AddEditContactVkIDTextBox_TextChanged(object sender, EventArgs e)
+        private void VkIDTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {

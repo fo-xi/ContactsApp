@@ -19,7 +19,20 @@ namespace ContactsAppUserInterface
             InitializeComponent();
         }
 
-        private void ContactsAppAddButton_Click(object sender, EventArgs e)
+        private void AllContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedIndex = AllContactsListBox.SelectedIndex;
+            if (selectedIndex != -1)
+            {
+                SurnameTextBox.Text = _project.Contacts[selectedIndex].Surname;
+                NameTextBox.Text = _project.Contacts[selectedIndex].Name;
+                BirthdayDateTimePicker.Value = _project.Contacts[selectedIndex].DateBirth;
+                PhoneTextBox.Text = _project.Contacts[selectedIndex].Number.Number;
+                EmailTextBox.Text = _project.Contacts[selectedIndex].Email;
+                VkIDTextBox.Text = _project.Contacts[selectedIndex].VKID;
+            }
+        }
+        private void AddButton_Click(object sender, EventArgs e)
         {
             var addContact = new ContactForm();
             addContact.ShowDialog();
@@ -36,21 +49,7 @@ namespace ContactsAppUserInterface
                 SaveToFile(sender, e);
             }
         }
-
-        private void ContactsAppAllContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var selectedIndex = AllContactsListBox.SelectedIndex;
-            if (selectedIndex != -1)
-            {
-                SurnameTextBox.Text = _project.Contacts[selectedIndex].Surname;
-                NameTextBox.Text = _project.Contacts[selectedIndex].Name;
-                BirthdayDateTimePicker.Value = _project.Contacts[selectedIndex].DateBirth;
-                PhoneTextBox.Text = _project.Contacts[selectedIndex].Number.Number;
-                EmailTextBox.Text = _project.Contacts[selectedIndex].Email;
-                VkIDTextBox.Text = _project.Contacts[selectedIndex].VKID;
-            }
-        }
-        private void ContactsAppRemoveButton_Click(object sender, EventArgs e)
+        private void RemoveButton_Click(object sender, EventArgs e)
         {
             var selectedIndex = AllContactsListBox.SelectedIndex;
             if (selectedIndex != -1)
@@ -75,7 +74,7 @@ namespace ContactsAppUserInterface
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void ContactsAppEditButton_Click(object sender, EventArgs e)
+        private void EditButton_Click(object sender, EventArgs e)
         {
             var selectedIndex = AllContactsListBox.SelectedIndex;
             if (selectedIndex != -1)
@@ -106,15 +105,15 @@ namespace ContactsAppUserInterface
         }
         private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ContactsAppAddButton_Click(sender, e);
+            AddButton_Click(sender, e);
         }
         private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ContactsAppEditButton_Click(sender, e);
+            EditButton_Click(sender, e);
         }
-        private void DeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ContactsAppRemoveButton_Click(sender, e);
+            RemoveButton_Click(sender, e);
         }
         protected override bool ProcessCmdKey(ref Message message, Keys keys)
         {

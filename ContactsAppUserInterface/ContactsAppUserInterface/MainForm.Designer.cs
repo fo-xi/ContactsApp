@@ -43,8 +43,8 @@
             this.SurnameLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
-            this.Birthdaylabel = new System.Windows.Forms.Label();
-            this.PhonrLabel = new System.Windows.Forms.Label();
+            this.BirthdayLabel = new System.Windows.Forms.Label();
+            this.PhoneLabel = new System.Windows.Forms.Label();
             this.VkIDLabel = new System.Windows.Forms.Label();
             this.BirthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AddButton = new System.Windows.Forms.Button();
@@ -96,23 +96,23 @@
             // addContactToolStripMenuItem
             // 
             this.addContactToolStripMenuItem.Name = "addContactToolStripMenuItem";
-            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addContactToolStripMenuItem.Text = "Add Contact";
             this.addContactToolStripMenuItem.Click += new System.EventHandler(this.AddContactToolStripMenuItem_Click);
             // 
             // editContactToolStripMenuItem
             // 
             this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editContactToolStripMenuItem.Text = "Edit Contact";
             this.editContactToolStripMenuItem.Click += new System.EventHandler(this.EditContactToolStripMenuItem_Click);
             // 
             // deToolStripMenuItem
             // 
             this.deToolStripMenuItem.Name = "deToolStripMenuItem";
-            this.deToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.deToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deToolStripMenuItem.Text = "Remove Contact";
-            this.deToolStripMenuItem.Click += new System.EventHandler(this.DeToolStripMenuItem_Click);
+            this.deToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -194,27 +194,27 @@
             this.EmailLabel.TabIndex = 9;
             this.EmailLabel.Text = "e-mail:";
             // 
-            // Birthdaylabel
+            // BirthdayLabel
             // 
-            this.Birthdaylabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Birthdaylabel.AutoSize = true;
-            this.Birthdaylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Birthdaylabel.Location = new System.Drawing.Point(11, 66);
-            this.Birthdaylabel.Name = "Birthdaylabel";
-            this.Birthdaylabel.Size = new System.Drawing.Size(64, 17);
-            this.Birthdaylabel.TabIndex = 10;
-            this.Birthdaylabel.Text = "Birthday:";
+            this.BirthdayLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BirthdayLabel.AutoSize = true;
+            this.BirthdayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BirthdayLabel.Location = new System.Drawing.Point(11, 66);
+            this.BirthdayLabel.Name = "BirthdayLabel";
+            this.BirthdayLabel.Size = new System.Drawing.Size(64, 17);
+            this.BirthdayLabel.TabIndex = 10;
+            this.BirthdayLabel.Text = "Birthday:";
             // 
-            // PhonrLabel
+            // PhoneLabel
             // 
-            this.PhonrLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.PhonrLabel.AutoSize = true;
-            this.PhonrLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.PhonrLabel.Location = new System.Drawing.Point(22, 96);
-            this.PhonrLabel.Name = "PhonrLabel";
-            this.PhonrLabel.Size = new System.Drawing.Size(53, 17);
-            this.PhonrLabel.TabIndex = 11;
-            this.PhonrLabel.Text = "Phone:";
+            this.PhoneLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.PhoneLabel.Location = new System.Drawing.Point(22, 96);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(53, 17);
+            this.PhoneLabel.TabIndex = 11;
+            this.PhoneLabel.Text = "Phone:";
             // 
             // VkIDLabel
             // 
@@ -246,7 +246,7 @@
             this.AddButton.TabIndex = 18;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.ContactsAppAddButton_Click);
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // EditButton
             // 
@@ -259,7 +259,7 @@
             this.EditButton.TabIndex = 19;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.ContactsAppEditButton_Click);
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // RemoveButton
             // 
@@ -272,7 +272,7 @@
             this.RemoveButton.TabIndex = 20;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
-            this.RemoveButton.Click += new System.EventHandler(this.ContactsAppRemoveButton_Click);
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -284,9 +284,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.64706F));
             this.tableLayoutPanel1.Controls.Add(this.NameLabel, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.NameTextBox, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Birthdaylabel, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.BirthdayLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.BirthdayDateTimePicker, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.PhonrLabel, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.PhoneLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.PhoneTextBox, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.VkIDTextBox, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.VkIDLabel, 0, 5);
@@ -317,7 +317,7 @@
             this.AllContactsListBox.ScrollAlwaysVisible = true;
             this.AllContactsListBox.Size = new System.Drawing.Size(298, 316);
             this.AllContactsListBox.TabIndex = 17;
-            this.AllContactsListBox.SelectedIndexChanged += new System.EventHandler(this.ContactsAppAllContactsListBox_SelectedIndexChanged);
+            this.AllContactsListBox.SelectedIndexChanged += new System.EventHandler(this.AllContactsListBox_SelectedIndexChanged);
             // 
             // Findlabel
             // 
@@ -423,8 +423,8 @@
         private System.Windows.Forms.Label SurnameLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label EmailLabel;
-        private System.Windows.Forms.Label Birthdaylabel;
-        private System.Windows.Forms.Label PhonrLabel;
+        private System.Windows.Forms.Label BirthdayLabel;
+        private System.Windows.Forms.Label PhoneLabel;
         private System.Windows.Forms.Label VkIDLabel;
         private System.Windows.Forms.DateTimePicker BirthdayDateTimePicker;
         private System.Windows.Forms.Button AddButton;
