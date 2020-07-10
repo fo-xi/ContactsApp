@@ -139,10 +139,19 @@ namespace ContactsAppUserInterface
         }
         private void SaveToFile(object sender, EventArgs e)
         {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.ShowDialog();
-            string filename = dialog.FileName;
+            string filename = Environment.GetFolderPath
+            (Environment.SpecialFolder.ApplicationData) + "\\ConatctsApp\\Contacts.txt";
             ProjectManager.WriteToFile(_project, filename);
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            string filename = Environment.GetFolderPath
+           (Environment.SpecialFolder.ApplicationData) + "\\ConatctsApp\\Contacts.txt";
+            _project = ProjectManager.ReadFromFile(filename);
+            foreach (var n in _project.Contacts)
+            {
+                AllContactsListBox.Items.Add(n.Surname);
+            }
         }
     }
 }

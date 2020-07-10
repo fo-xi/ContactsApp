@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactForm));
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.BirthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -240,6 +241,7 @@
             this.ClientSize = new System.Drawing.Size(438, 249);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContactForm";
             this.Text = "Add/Edit Contact";
             this.Load += new System.EventHandler(this.DisplayIinformation);

@@ -71,5 +71,13 @@ namespace ContactsApp
                     "digits and start with 7");
             }
         }
+        public static void AssertDateBirth(DateTime value)
+        {
+            if ((value.Year < 1900) || (value > DateTime.Now))
+            {
+                throw new ArgumentException(value.Year + " "
+                    + "must be in the range from" + 1900 + "to" + DateTime.Now);
+            }
+        }
     }
 }

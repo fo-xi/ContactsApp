@@ -79,11 +79,7 @@ namespace ContactsApp
             }
             set
             {
-                if ((value.Year < 1900) || (value > DateTime.Now))
-                {
-                    throw new ArgumentException(value.Year + " "
-                        + "must be in the range from" + 1900 + "to" + DateTime.Now);
-                }
+                Validator.AssertDateBirth(value);
                 _dateBirth = value;
             }
         }
