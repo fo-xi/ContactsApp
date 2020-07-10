@@ -16,7 +16,7 @@ namespace ContactsAppUserInterface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ContactsApp());
+            Application.Run(new MainForm());
         }
     }
 }

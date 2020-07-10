@@ -1,6 +1,6 @@
 ﻿namespace ContactsAppUserInterface
 {
-    partial class ContactsApp
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -31,6 +31,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContactsAppSurnameTextBox = new System.Windows.Forms.TextBox();
             this.ContactsAppNameTextBox = new System.Windows.Forms.TextBox();
@@ -78,18 +81,45 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addContactToolStripMenuItem,
+            this.editContactToolStripMenuItem,
+            this.deToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // addContactToolStripMenuItem
+            // 
+            this.addContactToolStripMenuItem.Name = "addContactToolStripMenuItem";
+            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addContactToolStripMenuItem.Text = "Add Contact";
+            this.addContactToolStripMenuItem.Click += new System.EventHandler(this.AddContactToolStripMenuItem_Click);
+            // 
+            // editContactToolStripMenuItem
+            // 
+            this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.editContactToolStripMenuItem.Text = "Edit Contact";
+            this.editContactToolStripMenuItem.Click += new System.EventHandler(this.EditContactToolStripMenuItem_Click);
+            // 
+            // deToolStripMenuItem
+            // 
+            this.deToolStripMenuItem.Name = "deToolStripMenuItem";
+            this.deToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.deToolStripMenuItem.Text = "Remove Contact";
+            this.deToolStripMenuItem.Click += new System.EventHandler(this.DeToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.HelpToolStripMenuItem_Click);
             // 
             // ContactsAppSurnameTextBox
             // 
@@ -291,10 +321,10 @@
             // 
             // ContactsAppFindlabel
             // 
-            this.ContactsAppFindlabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ContactsAppFindlabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ContactsAppFindlabel.AutoSize = true;
             this.ContactsAppFindlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ContactsAppFindlabel.Location = new System.Drawing.Point(15, 7);
+            this.ContactsAppFindlabel.Location = new System.Drawing.Point(3, 7);
             this.ContactsAppFindlabel.Name = "ContactsAppFindlabel";
             this.ContactsAppFindlabel.Size = new System.Drawing.Size(39, 17);
             this.ContactsAppFindlabel.TabIndex = 16;
@@ -303,16 +333,16 @@
             // ContactsAppFindTextBox
             // 
             this.ContactsAppFindTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ContactsAppFindTextBox.Location = new System.Drawing.Point(60, 5);
+            this.ContactsAppFindTextBox.Location = new System.Drawing.Point(49, 5);
             this.ContactsAppFindTextBox.Name = "ContactsAppFindTextBox";
-            this.ContactsAppFindTextBox.Size = new System.Drawing.Size(241, 20);
+            this.ContactsAppFindTextBox.Size = new System.Drawing.Size(252, 20);
             this.ContactsAppFindTextBox.TabIndex = 13;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.77256F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.22744F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.13158F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.86842F));
             this.tableLayoutPanel2.Controls.Add(this.ContactsAppFindlabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.ContactsAppFindTextBox, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 44);
@@ -343,14 +373,14 @@
             this.tableLayoutPanel4.Controls.Add(this.ContactsAppAddButton, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.ContactsAppEditButton, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.ContactsAppRemoveButton, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(15, 411);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 411);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(230, 29);
             this.tableLayoutPanel4.TabIndex = 24;
             // 
-            // ContactsApp
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -363,8 +393,9 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(820, 490);
             this.MinimumSize = new System.Drawing.Size(820, 490);
-            this.Name = "ContactsApp";
+            this.Name = "MainForm";
             this.Text = "ContactsApp";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContactsApp_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -406,6 +437,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.ToolStripMenuItem addContactToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editContactToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deToolStripMenuItem;
     }
 }
 

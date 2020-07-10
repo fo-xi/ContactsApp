@@ -26,13 +26,8 @@ namespace ContactsApp
             }
             set
             {
-                if ((value[0] != '7'))
-                {
-                    throw new ArgumentException(value + " " +
-                        "The number must contain exactly 11" +
-                        "digits and start with 7");
-                }
-                Validator.AssertStringInRange(ref value, 0, 11);
+                Validator.AssertPhoneNumber(value);
+                Validator.AssertStringInRange(value, 0, 11);
                 _number = value;
             }
         }

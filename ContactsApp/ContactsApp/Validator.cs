@@ -19,7 +19,7 @@ namespace ContactsApp
         /// <param name="value">Value set by the user.</param>
         /// <param name="initialLength">The beginning of the border.</param>
         /// <param name="finalLength">The end of the border.</param>
-        public static void AssertStringInRange(ref string value,
+        public static void AssertStringInRange(string value,
             int initialLength, int finalLength)
         {
             if ((value.Length < initialLength) || (value.Length > finalLength))
@@ -45,7 +45,7 @@ namespace ContactsApp
         /// <param name="value">Value set by the user.</param>
         /// <param name="initialLength">The beginning of the border.</param>
         /// <param name="finalLength">The end of the border.</param>
-        public static void AssertIntInRange(ref int value,
+        public static void AssertIntInRange(int value,
             int initialLength, int finalLength)
         {
             if ((value > initialLength) && (value > finalLength))
@@ -55,11 +55,20 @@ namespace ContactsApp
                      initialLength + " " + "to" + " " + finalLength);
             }
         }
-        public static void AssertEmptyString(ref string value)
+        public static void AssertEmptyString(string value)
         {
             if ((value.Length == 0))
             {
                 throw new ArgumentException("Empty string");
+            }
+        }
+        public static void AssertPhoneNumber(string value)
+        {
+            if ((value[0] != '7'))
+            {
+                throw new ArgumentException(value + " " +
+                    "The number must contain exactly 11" +
+                    "digits and start with 7");
             }
         }
     }

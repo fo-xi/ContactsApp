@@ -42,8 +42,8 @@
             this.AddEditContactVkIDLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.AddEditContactOKButton = new System.Windows.Forms.Button();
             this.AddEditCancelButton = new System.Windows.Forms.Button();
+            this.AddEditContactOKButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +55,7 @@
             this.AddEditContactSurnameTextBox.Name = "AddEditContactSurnameTextBox";
             this.AddEditContactSurnameTextBox.Size = new System.Drawing.Size(319, 20);
             this.AddEditContactSurnameTextBox.TabIndex = 0;
+            this.AddEditContactSurnameTextBox.TextChanged += new System.EventHandler(this.AddEditContactSurnameTextBox_TextChanged);
             // 
             // AddEditContactNameTextBox
             // 
@@ -63,6 +64,7 @@
             this.AddEditContactNameTextBox.Name = "AddEditContactNameTextBox";
             this.AddEditContactNameTextBox.Size = new System.Drawing.Size(319, 20);
             this.AddEditContactNameTextBox.TabIndex = 1;
+            this.AddEditContactNameTextBox.TextChanged += new System.EventHandler(this.AddEditContactNameTextBox_TextChanged);
             // 
             // AddEditContactBirthdayDateTimePicker
             // 
@@ -79,6 +81,7 @@
             this.AddEditContactPhoneTextBox.Name = "AddEditContactPhoneTextBox";
             this.AddEditContactPhoneTextBox.Size = new System.Drawing.Size(319, 20);
             this.AddEditContactPhoneTextBox.TabIndex = 3;
+            this.AddEditContactPhoneTextBox.TextChanged += new System.EventHandler(this.AddEditContactPhoneTextBox_TextChanged);
             // 
             // AddEditContactEmailTextBox
             // 
@@ -87,6 +90,7 @@
             this.AddEditContactEmailTextBox.Name = "AddEditContactEmailTextBox";
             this.AddEditContactEmailTextBox.Size = new System.Drawing.Size(319, 20);
             this.AddEditContactEmailTextBox.TabIndex = 4;
+            this.AddEditContactEmailTextBox.TextChanged += new System.EventHandler(this.AddEditContactEmailTextBox_TextChanged);
             // 
             // AddEditContactVkIDTextBox
             // 
@@ -95,6 +99,7 @@
             this.AddEditContactVkIDTextBox.Name = "AddEditContactVkIDTextBox";
             this.AddEditContactVkIDTextBox.Size = new System.Drawing.Size(319, 20);
             this.AddEditContactVkIDTextBox.TabIndex = 5;
+            this.AddEditContactVkIDTextBox.TextChanged += new System.EventHandler(this.AddEditContactVkIDTextBox_TextChanged);
             // 
             // AddEditContactSurnameLabel
             // 
@@ -206,17 +211,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(177, 31);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
-            // AddEditContactOKButton
-            // 
-            this.AddEditContactOKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddEditContactOKButton.Location = new System.Drawing.Point(3, 3);
-            this.AddEditContactOKButton.Name = "AddEditContactOKButton";
-            this.AddEditContactOKButton.Size = new System.Drawing.Size(82, 25);
-            this.AddEditContactOKButton.TabIndex = 14;
-            this.AddEditContactOKButton.Text = "OK";
-            this.AddEditContactOKButton.UseVisualStyleBackColor = true;
-            this.AddEditContactOKButton.Click += new System.EventHandler(this.AddEditContactOKButton_Click);
-            // 
             // AddEditCancelButton
             // 
             this.AddEditCancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -228,6 +222,17 @@
             this.AddEditCancelButton.UseVisualStyleBackColor = true;
             this.AddEditCancelButton.Click += new System.EventHandler(this.AddEditCancelButton_Click);
             // 
+            // AddEditContactOKButton
+            // 
+            this.AddEditContactOKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddEditContactOKButton.Location = new System.Drawing.Point(3, 3);
+            this.AddEditContactOKButton.Name = "AddEditContactOKButton";
+            this.AddEditContactOKButton.Size = new System.Drawing.Size(82, 25);
+            this.AddEditContactOKButton.TabIndex = 14;
+            this.AddEditContactOKButton.Text = "OK";
+            this.AddEditContactOKButton.UseVisualStyleBackColor = true;
+            this.AddEditContactOKButton.Click += new System.EventHandler(this.AddEditContactOKButton_Click);
+            // 
             // AddEditContact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -237,6 +242,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddEditContact";
             this.Text = "Add/Edit Contact";
+            this.Load += new System.EventHandler(this.DisplayIinformation);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
