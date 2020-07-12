@@ -10,9 +10,10 @@ using System.Windows.Forms;
 using ContactsApp;
 
 namespace ContactsAppUserInterface
-{
+{ //TODO: зачем увеличен размер шрифта у лейблов на форме?
+    //TODO: проверь и исправь резиновость формы
     public partial class ContactForm : Form
-    {
+    { //TODO: xml //TODO: одна пустая строка между членами класса
         public Contact Contact { set; get; }
         public ContactForm()
         {
@@ -38,7 +39,7 @@ namespace ContactsAppUserInterface
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        } //TODO: грамошибка в названии метода
         private void DisplayIinformation(object sender, EventArgs e)
         {
             if (Contact != null)
