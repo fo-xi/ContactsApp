@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using ContactsApp;
 
 namespace ContactsAppUserInterface
-{ //TODO: зачем увеличен размер шрифта у лейблов на форме? (+)
+{   //TODO: зачем увеличен размер шрифта у лейблов на форме? (+)
     //TODO: проверь и исправь резиновость формы (+)
     public partial class ContactForm : Form
     { //TODO: xml (+) //TODO: одна пустая строка между членами класса (+)

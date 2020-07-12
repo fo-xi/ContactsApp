@@ -56,10 +56,10 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.AllContactsListBox = new System.Windows.Forms.ListBox();
             this.RemoveTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.EditTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.AddTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RemoveButton = new System.Windows.Forms.Button();
+            this.EditTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.EditButton = new System.Windows.Forms.Button();
+            this.AddTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.AddButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -381,6 +381,21 @@
             this.RemoveTableLayoutPanel.Size = new System.Drawing.Size(40, 40);
             this.RemoveTableLayoutPanel.TabIndex = 26;
             // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.RemoveButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveButton.Location = new System.Drawing.Point(3, 3);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(34, 34);
+            this.RemoveButton.TabIndex = 20;
+            this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
             // EditTableLayoutPanel
             // 
             this.EditTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -395,6 +410,21 @@
             this.EditTableLayoutPanel.Size = new System.Drawing.Size(40, 40);
             this.EditTableLayoutPanel.TabIndex = 26;
             // 
+            // EditButton
+            // 
+            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.EditButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Location = new System.Drawing.Point(3, 3);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(34, 34);
+            this.EditButton.TabIndex = 19;
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
             // AddTableLayoutPanel
             // 
             this.AddTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -408,38 +438,14 @@
             this.AddTableLayoutPanel.Size = new System.Drawing.Size(40, 40);
             this.AddTableLayoutPanel.TabIndex = 25;
             // 
-            // RemoveButton
-            // 
-            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemoveButton.Image = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_58NdeGqD71c;
-            this.RemoveButton.Location = new System.Drawing.Point(3, 3);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(34, 34);
-            this.RemoveButton.TabIndex = 20;
-            this.RemoveButton.UseVisualStyleBackColor = true;
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
-            // 
-            // EditButton
-            // 
-            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditButton.Image = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_QSRvKBLokfJ5aD;
-            this.EditButton.Location = new System.Drawing.Point(3, 3);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(34, 34);
-            this.EditButton.TabIndex = 19;
-            this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
             // AddButton
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddButton.Image = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_6bul8YpmKFT0Z;
+            this.AddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Location = new System.Drawing.Point(3, 3);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(34, 34);

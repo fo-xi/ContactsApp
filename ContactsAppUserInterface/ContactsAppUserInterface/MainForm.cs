@@ -27,7 +27,7 @@ namespace ContactsAppUserInterface
         private void AllContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedIndex = AllContactsListBox.SelectedIndex;
-            if (selectedIndex == -1) return;//TODO: лучше инвертировать условие для уменьшения вложенности
+            if (selectedIndex == -1) return;//TODO: лучше инвертировать условие для уменьшения вложенности (+)
             SurnameTextBox.Text = _project.Contacts[selectedIndex].Surname;
             NameTextBox.Text = _project.Contacts[selectedIndex].Name;
             BirthdayDateTimePicker.Value = _project.Contacts[selectedIndex].DateBirth;
@@ -40,11 +40,14 @@ namespace ContactsAppUserInterface
         {
             var addContact = new ContactForm();
             addContact.ShowDialog();
-            if (addContact.Contact != null) //TODO: в первую очередь надо проверять DialogResult, а не просто свойство на null
-            { //TODO: сообщение будет показываться каждый раз, когда пользователь закроет окно создания кнопкой Cancel - он и так знает, что нажал отмену, но почему-то ему дополнительно сообщают месседжбоксом. Лишние месседжбоксы раздражают пользователя, убрать (+)
+            DialogResult result = MessageBox.Show("Do you really want to add this contact?",
+                    "Add contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                //TODO: в первую очередь надо проверять DialogResult, а не просто свойство на null (+)
+                //TODO: сообщение будет показываться каждый раз, когда пользователь закроет окно создания кнопкой Cancel - он и так знает, что нажал отмену, но почему-то ему дополнительно сообщают месседжбоксом. Лишние месседжбоксы раздражают пользователя, убрать (+)
                 _project.Contacts.Add(addContact.Contact);
-                AllContactsListBox.Items.Add
-                    (addContact.Contact.Surname);
+                AllContactsListBox.Items.Add(addContact.Contact.Surname);
                 SaveToFile(sender, e);
             }
         }
@@ -94,11 +97,16 @@ namespace ContactsAppUserInterface
             {
                 var editContact = new ContactForm();
                 editContact.Contact = _project.Contacts[selectedIndex];
-                editContact.ShowDialog(); //TODO: нужна проверка DialogResult
-                AllContactsListBox.Items.RemoveAt(selectedIndex);
-                _project.Contacts.Remove(_project.Contacts[selectedIndex]);
-                _project.Contacts.Insert(selectedIndex, editContact.Contact);
-                AllContactsListBox.Items.Insert(selectedIndex, editContact.Contact.Surname);
+                editContact.ShowDialog(); //TODO: нужна проверка DialogResult (+)
+                DialogResult result = MessageBox.Show("Do you really want to edit this contact?",
+                    "Edit contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    AllContactsListBox.Items.RemoveAt(selectedIndex);
+                    _project.Contacts.Remove(_project.Contacts[selectedIndex]);
+                    _project.Contacts.Insert(selectedIndex, editContact.Contact);
+                    AllContactsListBox.Items.Insert(selectedIndex, editContact.Contact.Surname);
+                }
             }
             else
             {
