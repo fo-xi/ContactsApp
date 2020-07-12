@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ContactsApp
 {
-    //TODO: название класса не совпадает с названием файла (+)
     /// <summary>
     /// A class containing auxiliary functions.
     /// </summary>
@@ -20,7 +19,7 @@ namespace ContactsApp
         /// <param name="initialLength">The beginning of the border.</param>
         /// <param name="finalLength">The end of the border.</param>
         public static void AssertStringInRange(string value,
-            int initialLength, int finalLength)
+            int initialLength, int finalLength) //TODO: наверно, правильнее будет назвать AssertStringLength, по тому что Range - это всё-таки про числовой диапазон
         {
             if ((value.Length < initialLength) || (value.Length > finalLength))
             {
@@ -34,7 +33,7 @@ namespace ContactsApp
         /// or last name to uppercase.
         /// </summary>
         /// <param name="value">Value set by the user.</param>
-        public static string MakeUpperCase(string value) //TODO: не надо всё передавать по ref. Для простых типов данных никто не заморачивается и передает всё по значению (+)
+        public static string MakeUpperCase(string value)
         {
             return (value.Substring(0, 1).ToUpper() +
                     value.Substring(1, value.Length - 1).ToLower());

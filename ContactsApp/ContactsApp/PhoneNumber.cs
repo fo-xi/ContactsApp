@@ -9,12 +9,12 @@ namespace ContactsApp
     /// <summary>
     /// Class containing information about the phone number.
     /// </summary>
-    public class PhoneNumber //TODO: перед каждым классом нужен модификатор доступа public - иначе потом нельзя будет использовать в другом проекте (поправить здесь и в других классах) (+)
+    public class PhoneNumber
     {
         /// <summary>
         /// Contains information about the phone number.
         /// </summary>
-        private string _number; //TODO: пустые строки между членами класса (поправить здесь и в других классах) (+)
+        private string _number; //TODO: пустая строка между всеми членами класса
         /// <summary>
         /// Returns and sets the phone number.
         /// </summary>

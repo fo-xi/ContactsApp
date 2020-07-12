@@ -14,7 +14,7 @@ namespace ContactsApp
         /// <summary>
         /// Contact's surname.
         /// </summary>
-        private string _surname;
+        private string _surname; //TODO: одна пустая строка между всеми членами класса
         /// <summary>
         /// Contact's surname.
         /// </summary>
