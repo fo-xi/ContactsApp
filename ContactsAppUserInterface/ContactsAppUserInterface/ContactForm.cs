@@ -10,15 +10,20 @@ using System.Windows.Forms;
 using ContactsApp;
 
 namespace ContactsAppUserInterface
-{ //TODO: зачем увеличен размер шрифта у лейблов на форме?
-    //TODO: проверь и исправь резиновость формы
+{ //TODO: зачем увеличен размер шрифта у лейблов на форме? (+)
+    //TODO: проверь и исправь резиновость формы (+)
     public partial class ContactForm : Form
-    { //TODO: xml //TODO: одна пустая строка между членами класса
+    { //TODO: xml (+) //TODO: одна пустая строка между членами класса (+)
+        /// <summary>
+        /// Sets and returns contact information.
+        /// </summary>
         public Contact Contact { set; get; }
+
         public ContactForm()
         {
             InitializeComponent();
         }
+
         private void OKButton_Click(object sender, EventArgs e)
         {
             try
@@ -36,11 +41,13 @@ namespace ContactsAppUserInterface
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        } //TODO: грамошибка в названии метода
-        private void DisplayIinformation(object sender, EventArgs e)
+        } //TODO: грамошибка в названии метода (+)
+
+        private void DisplayInformation(object sender, EventArgs e)
         {
             if (Contact != null)
             {
@@ -52,42 +59,46 @@ namespace ContactsAppUserInterface
                 VkIDTextBox.Text = Contact.VKID;
             }
         }
+
         private void SurnameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                Validator.AssertStringInRange(SurnameTextBox.Text, 0, 50);
+                Validator.AssertStringLength(SurnameTextBox.Text, 0, 50);
                 SurnameTextBox.BackColor = Color.White;
             }            catch            {
                 SurnameTextBox.BackColor = Color.LightSalmon;
             }
         }
+
         private void NameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                Validator.AssertStringInRange(NameTextBox.Text, 0, 50);
+                Validator.AssertStringLength(NameTextBox.Text, 0, 50);
                 NameTextBox.BackColor = Color.White;
             }            catch            {
                 NameTextBox.BackColor = Color.LightSalmon;
             }
         }
+
         private void EmailTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                Validator.AssertStringInRange(EmailTextBox.Text, 0, 50);
+                Validator.AssertStringLength(EmailTextBox.Text, 0, 50);
                 EmailTextBox.BackColor = Color.White;
             }            catch            {
                 EmailTextBox.BackColor = Color.LightSalmon;
             }
         }
+
         private void PhoneTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 Validator.AssertPhoneNumber(PhoneTextBox.Text);
-                Validator.AssertStringInRange(PhoneTextBox.Text, 0, 11);
+                Validator.AssertStringLength(PhoneTextBox.Text, 0, 11);
                 PhoneTextBox.BackColor = Color.White;
             }
             catch
@@ -99,11 +110,12 @@ namespace ContactsAppUserInterface
                 PhoneTextBox.BackColor = Color.LightSalmon;
             }
         }
+
         private void VkIDTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                Validator.AssertStringInRange(VkIDTextBox.Text, 0, 15);
+                Validator.AssertStringLength(VkIDTextBox.Text, 0, 15);
                 VkIDTextBox.BackColor = Color.White;
             }            catch            {
                 VkIDTextBox.BackColor = Color.LightSalmon;

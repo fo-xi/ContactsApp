@@ -14,7 +14,8 @@ namespace ContactsApp
         /// <summary>
         /// Contains information about the phone number.
         /// </summary>
-        private string _number; //TODO: пустая строка между всеми членами класса
+        private string _number; //TODO: пустая строка между всеми членами класса (+)
+
         /// <summary>
         /// Returns and sets the phone number.
         /// </summary>
@@ -27,10 +28,11 @@ namespace ContactsApp
             set
             {
                 Validator.AssertPhoneNumber(value);
-                Validator.AssertStringInRange(value, 0, 11);
+                Validator.AssertStringLength(value, 0, 11);
                 _number = value;
             }
         }
+
         /// <summary>
         /// Creates a phone number.
         /// </summary>

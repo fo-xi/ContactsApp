@@ -14,23 +14,28 @@ namespace ContactsApp
         /// <summary>
         /// Contact's surname.
         /// </summary>
-        private string _surname; //TODO: одна пустая строка между всеми членами класса
+        private string _surname; //TODO: одна пустая строка между всеми членами класса (+)
+
         /// <summary>
         /// Contact's surname.
         /// </summary>
         private string _name;
+
         /// <summary>
         /// Contact's birthday.
         /// </summary>
         private DateTime _dateBirth;
+
         /// <summary>
         /// Contact's email.
         /// </summary>
         private string _email;
+
         /// <summary>
         /// Contact's ID Vkontakte.
         /// </summary>
         private string _vkID;
+
         /// <summary>
         /// Returns and sets the contact's surname.
         /// </summary>
@@ -43,10 +48,11 @@ namespace ContactsApp
             set
             {
                 Validator.AssertEmptyString(value);
-                Validator.AssertStringInRange(value, 0, 50);
+                Validator.AssertStringLength(value, 0, 50);
                 _surname = Validator.MakeUpperCase(value);
             }
         }
+
         /// <summary>
         /// Returns and sets the contact's name.
         /// </summary>
@@ -59,14 +65,16 @@ namespace ContactsApp
             set
             {
                 Validator.AssertEmptyString(value);
-                Validator.AssertStringInRange(value, 0, 50);
+                Validator.AssertStringLength(value, 0, 50);
                 _name = Validator.MakeUpperCase(value);
             }
         }
+
         /// <summary>
         /// Contact's number.
         /// </summary>
         public PhoneNumber Number { get; set; }
+
         /// <summary>
         /// Returns and sets the contact's birthday.
         /// </summary>
@@ -83,6 +91,7 @@ namespace ContactsApp
                 _dateBirth = value;
             }
         }
+
         /// <summary>
         /// Returns and sets the contact's email.
         /// </summary>
@@ -95,10 +104,11 @@ namespace ContactsApp
             set
             {
                 Validator.AssertEmptyString(value);
-                Validator.AssertStringInRange(value, 0, 50);
+                Validator.AssertStringLength(value, 0, 50);
                 _email = value;
             }
         }
+
         /// <summary>
         /// Returns and sets the contact's ID Vkontakte.
         /// </summary>
@@ -111,10 +121,11 @@ namespace ContactsApp
             set
             {
                 Validator.AssertEmptyString(value);
-                Validator.AssertStringInRange(value, 0, 15);
+                Validator.AssertStringLength(value, 0, 15);
                 _vkID = value;
             }
         }
+
         /// <summary>
         /// Creates a contact.
         /// </summary>
@@ -135,6 +146,7 @@ namespace ContactsApp
             this.Email = email;
             this.VKID = vkID;
         }
+
         /// <summary>
         /// Makes a copy of the object <see cref="Contact"/>
         /// </summary>

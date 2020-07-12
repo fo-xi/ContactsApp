@@ -106,10 +106,10 @@
             // 
             this.SurnameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SurnameLabel.AutoSize = true;
-            this.SurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.SurnameLabel.Location = new System.Drawing.Point(22, 7);
+            this.SurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.SurnameLabel.Location = new System.Drawing.Point(39, 9);
             this.SurnameLabel.Name = "SurnameLabel";
-            this.SurnameLabel.Size = new System.Drawing.Size(69, 17);
+            this.SurnameLabel.Size = new System.Drawing.Size(52, 13);
             this.SurnameLabel.TabIndex = 6;
             this.SurnameLabel.Text = "Surname:";
             // 
@@ -117,10 +117,10 @@
             // 
             this.NameLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.NameLabel.Location = new System.Drawing.Point(42, 38);
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.NameLabel.Location = new System.Drawing.Point(53, 40);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(49, 17);
+            this.NameLabel.Size = new System.Drawing.Size(38, 13);
             this.NameLabel.TabIndex = 7;
             this.NameLabel.Text = "Name:";
             // 
@@ -128,10 +128,10 @@
             // 
             this.BirthdayLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BirthdayLabel.AutoSize = true;
-            this.BirthdayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.BirthdayLabel.Location = new System.Drawing.Point(27, 69);
+            this.BirthdayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.BirthdayLabel.Location = new System.Drawing.Point(43, 71);
             this.BirthdayLabel.Name = "BirthdayLabel";
-            this.BirthdayLabel.Size = new System.Drawing.Size(64, 17);
+            this.BirthdayLabel.Size = new System.Drawing.Size(48, 13);
             this.BirthdayLabel.TabIndex = 8;
             this.BirthdayLabel.Text = "Birthday:";
             // 
@@ -139,10 +139,10 @@
             // 
             this.PhoneLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.PhoneLabel.Location = new System.Drawing.Point(38, 100);
+            this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.PhoneLabel.Location = new System.Drawing.Point(50, 102);
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(53, 17);
+            this.PhoneLabel.Size = new System.Drawing.Size(41, 13);
             this.PhoneLabel.TabIndex = 9;
             this.PhoneLabel.Text = "Phone:";
             // 
@@ -150,10 +150,10 @@
             // 
             this.EmailLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.EmailLabel.Location = new System.Drawing.Point(41, 131);
+            this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.EmailLabel.Location = new System.Drawing.Point(54, 133);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(50, 17);
+            this.EmailLabel.Size = new System.Drawing.Size(37, 13);
             this.EmailLabel.TabIndex = 10;
             this.EmailLabel.Text = "e-mail:";
             // 
@@ -161,16 +161,18 @@
             // 
             this.VkIDLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.VkIDLabel.AutoSize = true;
-            this.VkIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.VkIDLabel.Location = new System.Drawing.Point(35, 164);
+            this.VkIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.VkIDLabel.Location = new System.Drawing.Point(46, 166);
             this.VkIDLabel.Name = "VkIDLabel";
-            this.VkIDLabel.Size = new System.Drawing.Size(56, 17);
+            this.VkIDLabel.Size = new System.Drawing.Size(45, 13);
             this.VkIDLabel.TabIndex = 11;
             this.VkIDLabel.Text = "vk.com:";
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.46377F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.53623F));
@@ -200,6 +202,7 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -244,7 +247,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ContactForm";
             this.Text = "Add/Edit Contact";
-            this.Load += new System.EventHandler(this.DisplayIinformation);
+            this.Load += new System.EventHandler(this.DisplayInformation);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
