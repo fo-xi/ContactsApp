@@ -69,5 +69,35 @@ namespace ContactsAppUserInterface.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgonline_com_ua_Resize_b3eyJuimGwP {
+            get {
+                object obj = ResourceManager.GetObject("imgonline-com-ua-Resize-b3eyJuimGwP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgonline_com_ua_Resize_Bso1oAQC3lVV0 {
+            get {
+                object obj = ResourceManager.GetObject("imgonline-com-ua-Resize-Bso1oAQC3lVV0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgonline_com_ua_Resize_kl2lZ2PnYwr0 {
+            get {
+                object obj = ResourceManager.GetObject("imgonline-com-ua-Resize-kl2lZ2PnYwr0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

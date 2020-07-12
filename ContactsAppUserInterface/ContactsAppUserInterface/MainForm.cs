@@ -40,9 +40,7 @@ namespace ContactsAppUserInterface
         {
             var addContact = new ContactForm();
             addContact.ShowDialog();
-            DialogResult result = MessageBox.Show("Do you really want to add this contact?",
-                    "Add contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
+            if (addContact.DialogResult == DialogResult.OK)
             {
                 //TODO: в первую очередь надо проверять DialogResult, а не просто свойство на null (+)
                 //TODO: сообщение будет показываться каждый раз, когда пользователь закроет окно создания кнопкой Cancel - он и так знает, что нажал отмену, но почему-то ему дополнительно сообщают месседжбоксом. Лишние месседжбоксы раздражают пользователя, убрать (+)
@@ -98,9 +96,7 @@ namespace ContactsAppUserInterface
                 var editContact = new ContactForm();
                 editContact.Contact = _project.Contacts[selectedIndex];
                 editContact.ShowDialog(); //TODO: нужна проверка DialogResult (+)
-                DialogResult result = MessageBox.Show("Do you really want to edit this contact?",
-                    "Edit contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
+                if (editContact.DialogResult == DialogResult.OK)
                 {
                     AllContactsListBox.Items.RemoveAt(selectedIndex);
                     _project.Contacts.Remove(_project.Contacts[selectedIndex]);

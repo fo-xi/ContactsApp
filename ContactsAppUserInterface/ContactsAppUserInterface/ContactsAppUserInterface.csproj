@@ -128,5 +128,14 @@
   <ItemGroup>
     <None Include="Resources\imgonline-com-ua-Resize-58NdeGqD71c.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgonline-com-ua-Resize-Bso1oAQC3lVV0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgonline-com-ua-Resize-kl2lZ2PnYwr0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgonline-com-ua-Resize-b3eyJuimGwP.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
