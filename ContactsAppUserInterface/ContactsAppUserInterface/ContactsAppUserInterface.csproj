@@ -99,12 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ContactsApp\ContactsApp\ContactsApp.csproj">
-      <Project>{096ac72d-88d6-4809-96ae-3fcdc637b1b9}</Project>
-      <Name>ContactsApp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\contact-form.png" />
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imgonline-com-ua-Resize-b3eyJuimGwP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ContactsApp\ContactsApp.csproj">
+      <Project>{d5fe3181-83a1-4d4e-88c7-a003af2150fe}</Project>
+      <Name>ContactsApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

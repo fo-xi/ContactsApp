@@ -14,10 +14,10 @@ namespace ContactsApp
     /// </summary>
     public static class ProjectManager
     {
-        private static string folder = Environment.GetFolderPath
+        private static readonly string folder = Environment.GetFolderPath
         (Environment.SpecialFolder.ApplicationData) + "\\ContactsApp\\";
 
-        private static string file = "Contacts.txt";
+        private static readonly string file = "Contacts.txt";
 
         public static string Path { get; set; } = folder + file;
         /// <summary>
