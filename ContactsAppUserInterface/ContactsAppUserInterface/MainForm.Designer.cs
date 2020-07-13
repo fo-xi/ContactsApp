@@ -386,6 +386,7 @@
             this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.RemoveButton.BackgroundImage = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_b3eyJuimGwP;
             this.RemoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.RemoveButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -415,6 +416,7 @@
             this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditButton.BackgroundImage = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_kl2lZ2PnYwr0;
             this.EditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.EditButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -443,6 +445,7 @@
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddButton.BackgroundImage = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_Bso1oAQC3lVV0;
             this.AddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

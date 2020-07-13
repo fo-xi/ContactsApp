@@ -21,7 +21,7 @@ namespace ContactsApp
         public static void AssertStringLength(string value,
             int initialLength, int finalLength) //TODO: наверно, правильнее будет назвать AssertStringLength, по тому что Range - это всё-таки про числовой диапазон (+)
         {
-            if ((value.Length < initialLength) && (value.Length > finalLength))
+            if ((value.Length < initialLength) || (value.Length > finalLength))
             {
                 throw new ArgumentException(value + " " +
                     "must be in the range from" + " " +
@@ -49,7 +49,7 @@ namespace ContactsApp
         public static void AssertIntInRange(int value,
             int initialLength, int finalLength)
         {
-            if ((value < initialLength) && (value > finalLength))
+            if ((value < initialLength) || (value > finalLength))
             {
                 throw new ArgumentException(value + " " +
                     "must be in the range from" + " " +
@@ -77,7 +77,7 @@ namespace ContactsApp
 
         public static void AssertDateBirth(DateTime value)
         {
-            if ((value.Year < 1900) && (value > DateTime.Now))
+            if ((value.Year < 1900) || (value > DateTime.Now))
             {
                 throw new ArgumentException(value.Year + " "
                     + "must be in the range from" + 1900 + "to" + DateTime.Now);
