@@ -176,12 +176,7 @@ namespace ContactsAppUserInterface
                 AllContactsListBox.Items.Add(n.Surname);
             }
         }
-
-        private void SplitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
-    //TODO: кнопки с пиктограммами слишком большие, картинка для пиктограмм не на прозрачном фоне + видно какую белую рамку
-    //TODO: форму всё еще нельзя растянуть на весь экран
+    //TODO: кнопки с пиктограммами слишком большие, картинка для пиктограмм не на прозрачном фоне + видно какую белую рамку (+)
+    //TODO: форму всё еще нельзя растянуть на весь экран (+)
 }

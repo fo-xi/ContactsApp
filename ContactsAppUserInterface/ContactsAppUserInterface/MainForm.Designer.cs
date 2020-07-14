@@ -56,10 +56,10 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.AllContactsListBox = new System.Windows.Forms.ListBox();
             this.RemoveTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.EditTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.AddTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.RemoveButton = new System.Windows.Forms.Button();
+            this.EditTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.EditButton = new System.Windows.Forms.Button();
+            this.AddTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.AddButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -336,7 +336,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.SplitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(804, 414);
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 25;
@@ -382,33 +381,6 @@
             this.RemoveTableLayoutPanel.Size = new System.Drawing.Size(30, 30);
             this.RemoveTableLayoutPanel.TabIndex = 26;
             // 
-            // EditTableLayoutPanel
-            // 
-            this.EditTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.EditTableLayoutPanel.ColumnCount = 1;
-            this.EditTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.EditTableLayoutPanel.Controls.Add(this.EditButton, 0, 0);
-            this.EditTableLayoutPanel.Location = new System.Drawing.Point(36, 377);
-            this.EditTableLayoutPanel.Name = "EditTableLayoutPanel";
-            this.EditTableLayoutPanel.RowCount = 1;
-            this.EditTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.EditTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.EditTableLayoutPanel.Size = new System.Drawing.Size(30, 30);
-            this.EditTableLayoutPanel.TabIndex = 26;
-            // 
-            // AddTableLayoutPanel
-            // 
-            this.AddTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddTableLayoutPanel.ColumnCount = 1;
-            this.AddTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AddTableLayoutPanel.Controls.Add(this.AddButton, 0, 0);
-            this.AddTableLayoutPanel.Location = new System.Drawing.Point(3, 377);
-            this.AddTableLayoutPanel.Name = "AddTableLayoutPanel";
-            this.AddTableLayoutPanel.RowCount = 1;
-            this.AddTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AddTableLayoutPanel.Size = new System.Drawing.Size(30, 30);
-            this.AddTableLayoutPanel.TabIndex = 25;
-            // 
             // RemoveButton
             // 
             this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -426,6 +398,20 @@
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
+            // EditTableLayoutPanel
+            // 
+            this.EditTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.EditTableLayoutPanel.ColumnCount = 1;
+            this.EditTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.EditTableLayoutPanel.Controls.Add(this.EditButton, 0, 0);
+            this.EditTableLayoutPanel.Location = new System.Drawing.Point(36, 377);
+            this.EditTableLayoutPanel.Name = "EditTableLayoutPanel";
+            this.EditTableLayoutPanel.RowCount = 1;
+            this.EditTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.EditTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.EditTableLayoutPanel.Size = new System.Drawing.Size(30, 30);
+            this.EditTableLayoutPanel.TabIndex = 26;
+            // 
             // EditButton
             // 
             this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -441,6 +427,19 @@
             this.EditButton.TabIndex = 19;
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // AddTableLayoutPanel
+            // 
+            this.AddTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddTableLayoutPanel.ColumnCount = 1;
+            this.AddTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.AddTableLayoutPanel.Controls.Add(this.AddButton, 0, 0);
+            this.AddTableLayoutPanel.Location = new System.Drawing.Point(3, 377);
+            this.AddTableLayoutPanel.Name = "AddTableLayoutPanel";
+            this.AddTableLayoutPanel.RowCount = 1;
+            this.AddTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.AddTableLayoutPanel.Size = new System.Drawing.Size(30, 30);
+            this.AddTableLayoutPanel.TabIndex = 25;
             // 
             // AddButton
             // 
@@ -467,7 +466,6 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(840, 500);
             this.MinimumSize = new System.Drawing.Size(820, 476);
             this.Name = "MainForm";
             this.Text = "ContactsApp";
