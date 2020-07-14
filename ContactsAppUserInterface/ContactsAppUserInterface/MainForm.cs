@@ -34,27 +34,27 @@ namespace ContactsAppUserInterface
             VkIDTextBox.Text = _project.Contacts[selectedIndex].VKID;
         }
 
-        private void AddContact(object sender, EventArgs e)
+        private void AddContact()
         {
-            //TODO: зачем в методе аргументы события?
+            //TODO: зачем в методе аргументы события? (+)
             var addContact = new ContactForm();
             addContact.ShowDialog();
             if (addContact.DialogResult == DialogResult.OK)
             {
                 _project.Contacts.Add(addContact.Contact);
                 AllContactsListBox.Items.Add(addContact.Contact.Surname);
-                SaveToFile(sender, e);
+                SaveToFile();
             }
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            AddContact(sender, e);
+            AddContact();
         }
 
-        private void RemoveContact(object sender, EventArgs e)
+        private void RemoveContact()
         {
-            //TODO: зачем в методе аргументы?
+            //TODO: зачем в методе аргументы? (+)
             var selectedIndex = AllContactsListBox.SelectedIndex;
             if (selectedIndex != -1)
             {
@@ -69,24 +69,24 @@ namespace ContactsAppUserInterface
                     PhoneTextBox.Clear();
                     EmailTextBox.Clear();
                     VkIDTextBox.Clear();
-                    SaveToFile(sender, e);
+                    SaveToFile();
                 }
 }
             else
             {
-                //TODO: часть сообщений на русском, часть на английском. Сделать единообразно
-                MessageBox.Show("Выберите контакт из списка", "Warning", 
+                //TODO: часть сообщений на русском, часть на английском. Сделать единообразно (+)
+                MessageBox.Show("Select a contact from the list", "Warning", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            RemoveContact(sender, e);
+            RemoveContact();
         }
 
-        private void EditContact(object sender, EventArgs e)
-        { //TODO: зачем сюда передаются сендер и аргументы события? Это аргументы обработчиков, а это должен быть обычный метод
+        private void EditContact()
+        { //TODO: зачем сюда передаются сендер и аргументы события? Это аргументы обработчиков, а это должен быть обычный метод (+)
             var selectedIndex = AllContactsListBox.SelectedIndex;
             if (selectedIndex != -1)
             {
@@ -103,14 +103,14 @@ namespace ContactsAppUserInterface
             }
             else
             {
-                MessageBox.Show("Выберите контакт из списка", "Warning",
+                MessageBox.Show("Select a contact from the list", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            EditContact(sender, e);
+            EditContact();
         }
 
         private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -126,17 +126,17 @@ namespace ContactsAppUserInterface
 
         private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddContact(sender, e);
+            AddContact();
         }
 
         private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditContact(sender, e);
+            EditContact();
         }
 
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoveContact(sender, e);
+            RemoveContact();
         }
 
         protected override bool ProcessCmdKey(ref Message message, Keys keys)
@@ -160,10 +160,10 @@ namespace ContactsAppUserInterface
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SaveToFile(sender, e);
+            SaveToFile();
         }
 
-        private void SaveToFile(object sender, EventArgs e)
+        private void SaveToFile()
         {
             ProjectManager.WriteToFile(_project);
         }
@@ -175,6 +175,11 @@ namespace ContactsAppUserInterface
             {
                 AllContactsListBox.Items.Add(n.Surname);
             }
+        }
+
+        private void SplitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     //TODO: кнопки с пиктограммами слишком большие, картинка для пиктограмм не на прозрачном фоне + видно какую белую рамку

@@ -78,17 +78,11 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -100,36 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\contact-form.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-9ZUn5ASF6lA.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-o8oNNWtJ02Jfe.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-QSRvKBLokfJ5aD.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-AQCmRJUq3T.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-k8DWahnsewV.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-6bul8YpmKFT0Z.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-58NdeGqD71c.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-Bso1oAQC3lVV0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-kl2lZ2PnYwr0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imgonline-com-ua-Resize-b3eyJuimGwP.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContactsApp\ContactsApp.csproj">

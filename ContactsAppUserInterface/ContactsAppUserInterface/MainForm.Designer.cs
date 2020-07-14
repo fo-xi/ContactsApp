@@ -336,6 +336,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.SplitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(804, 414);
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 25;
@@ -352,7 +353,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(278, 327);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(278, 338);
             this.tableLayoutPanel3.TabIndex = 25;
             // 
             // AllContactsListBox
@@ -364,7 +365,7 @@
             this.AllContactsListBox.Location = new System.Drawing.Point(3, 3);
             this.AllContactsListBox.Name = "AllContactsListBox";
             this.AllContactsListBox.ScrollAlwaysVisible = true;
-            this.AllContactsListBox.Size = new System.Drawing.Size(272, 316);
+            this.AllContactsListBox.Size = new System.Drawing.Size(272, 329);
             this.AllContactsListBox.TabIndex = 17;
             this.AllContactsListBox.SelectedIndexChanged += new System.EventHandler(this.AllContactsListBox_SelectedIndexChanged);
             // 
@@ -374,11 +375,11 @@
             this.RemoveTableLayoutPanel.ColumnCount = 1;
             this.RemoveTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.RemoveTableLayoutPanel.Controls.Add(this.RemoveButton, 0, 0);
-            this.RemoveTableLayoutPanel.Location = new System.Drawing.Point(89, 366);
+            this.RemoveTableLayoutPanel.Location = new System.Drawing.Point(65, 380);
             this.RemoveTableLayoutPanel.Name = "RemoveTableLayoutPanel";
             this.RemoveTableLayoutPanel.RowCount = 1;
             this.RemoveTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.RemoveTableLayoutPanel.Size = new System.Drawing.Size(40, 40);
+            this.RemoveTableLayoutPanel.Size = new System.Drawing.Size(25, 25);
             this.RemoveTableLayoutPanel.TabIndex = 26;
             // 
             // RemoveButton
@@ -386,13 +387,13 @@
             this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemoveButton.BackgroundImage = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_b3eyJuimGwP;
+            this.RemoveButton.AutoSize = true;
             this.RemoveButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.RemoveButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveButton.Location = new System.Drawing.Point(3, 3);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(34, 34);
+            this.RemoveButton.Size = new System.Drawing.Size(19, 19);
             this.RemoveButton.TabIndex = 20;
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
@@ -403,12 +404,12 @@
             this.EditTableLayoutPanel.ColumnCount = 1;
             this.EditTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.EditTableLayoutPanel.Controls.Add(this.EditButton, 0, 0);
-            this.EditTableLayoutPanel.Location = new System.Drawing.Point(46, 366);
+            this.EditTableLayoutPanel.Location = new System.Drawing.Point(34, 380);
             this.EditTableLayoutPanel.Name = "EditTableLayoutPanel";
             this.EditTableLayoutPanel.RowCount = 1;
             this.EditTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.EditTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.EditTableLayoutPanel.Size = new System.Drawing.Size(40, 40);
+            this.EditTableLayoutPanel.Size = new System.Drawing.Size(25, 25);
             this.EditTableLayoutPanel.TabIndex = 26;
             // 
             // EditButton
@@ -416,13 +417,12 @@
             this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditButton.BackgroundImage = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_kl2lZ2PnYwr0;
             this.EditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.EditButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Location = new System.Drawing.Point(3, 3);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(34, 34);
+            this.EditButton.Size = new System.Drawing.Size(19, 19);
             this.EditButton.TabIndex = 19;
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
@@ -433,11 +433,11 @@
             this.AddTableLayoutPanel.ColumnCount = 1;
             this.AddTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.AddTableLayoutPanel.Controls.Add(this.AddButton, 0, 0);
-            this.AddTableLayoutPanel.Location = new System.Drawing.Point(3, 366);
+            this.AddTableLayoutPanel.Location = new System.Drawing.Point(3, 380);
             this.AddTableLayoutPanel.Name = "AddTableLayoutPanel";
             this.AddTableLayoutPanel.RowCount = 1;
             this.AddTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.AddTableLayoutPanel.Size = new System.Drawing.Size(40, 40);
+            this.AddTableLayoutPanel.Size = new System.Drawing.Size(25, 25);
             this.AddTableLayoutPanel.TabIndex = 25;
             // 
             // AddButton
@@ -445,13 +445,12 @@
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddButton.BackgroundImage = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_Bso1oAQC3lVV0;
             this.AddButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.AddButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Location = new System.Drawing.Point(3, 3);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(34, 34);
+            this.AddButton.Size = new System.Drawing.Size(19, 19);
             this.AddButton.TabIndex = 18;
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
@@ -483,6 +482,7 @@
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.RemoveTableLayoutPanel.ResumeLayout(false);
+            this.RemoveTableLayoutPanel.PerformLayout();
             this.EditTableLayoutPanel.ResumeLayout(false);
             this.AddTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
