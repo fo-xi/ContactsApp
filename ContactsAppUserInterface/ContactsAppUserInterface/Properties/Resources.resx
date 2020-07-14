@@ -118,31 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="imgonline-com-ua-Resize-OYDEqOUGO8eZ2CBI" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgonline-com-ua-Resize-OYDEqOUGO8eZ2CBI.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgonline-com-ua-Resize-gp2yy5GPV0QQ0iS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgonline-com-ua-Resize-gp2yy5GPV0QQ0iS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgonline-com-ua-Resize-OYDEqOUGO8eZ2CBI1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgonline-com-ua-Resize-OYDEqOUGO8eZ2CBI1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgonline-com-ua-Resize-kl2lZ2PnYwr0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgonline-com-ua-Resize-kl2lZ2PnYwr0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgonline-com-ua-Resize-BlLyZq2Tnx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgonline-com-ua-Resize-BlLyZq2Tnx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="contact-form" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contact-form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imgonline-com-ua-Resize-Bso1oAQC3lVV0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgonline-com-ua-Resize-Bso1oAQC3lVV0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgonline-com-ua-Resize-u82drcxwupnbVmmv" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgonline-com-ua-Resize-u82drcxwupnbVmmv.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgonline-com-ua-Resize-b3eyJuimGwP" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgonline-com-ua-Resize-b3eyJuimGwP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imgonline-com-ua-Resize-u82drcxwupnbVmmv1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imgonline-com-ua-Resize-u82drcxwupnbVmmv1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imgonline-com-ua-Resize-DrzJMpDvMZzLZhC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imgonline-com-ua-Resize-DrzJMpDvMZzLZhC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
