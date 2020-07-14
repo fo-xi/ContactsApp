@@ -73,6 +73,16 @@ namespace ContactsAppUserInterface.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgonline_com_ua_Resize_ASXjXaEi6MYq4 {
+            get {
+                object obj = ResourceManager.GetObject("imgonline-com-ua-Resize-ASXjXaEi6MYq4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgonline_com_ua_Resize_BlLyZq2Tnx {
             get {
                 object obj = ResourceManager.GetObject("imgonline-com-ua-Resize-BlLyZq2Tnx", resourceCulture);

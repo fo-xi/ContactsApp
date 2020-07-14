@@ -164,6 +164,12 @@ namespace ContactsAppUserInterface
                     this.Close();
                     return true;
                 }
+                case (Keys.Delete):
+                {
+                    RemoveContact();
+                    return true;
+                }
+
             }
             return base.ProcessCmdKey(ref message, keys);
         }
@@ -188,6 +194,15 @@ namespace ContactsAppUserInterface
             _project.Contacts = _project.SortingContacts();
             _contacts = _project.Contacts;
             UpdateListBox();
+
+            var contacts = _project.GetDateBirth(DateTime.Now);
+            if (contacts.Count != 0)
+            {
+                foreach (var i in contacts)
+                {
+                    NamesBirthdayPeopleLabel.Text += i.Surname + " ";
+                }
+            }
         }
 
         private void SearchContact()

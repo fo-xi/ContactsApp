@@ -61,6 +61,10 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.AddTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.AddButton = new System.Windows.Forms.Button();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BirtdayLabel = new System.Windows.Forms.Label();
+            this.NamesBirthdayPeopleLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -72,6 +76,11 @@
             this.RemoveTableLayoutPanel.SuspendLayout();
             this.EditTableLayoutPanel.SuspendLayout();
             this.AddTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -336,6 +345,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer1.Size = new System.Drawing.Size(804, 414);
             this.splitContainer1.SplitterDistance = 284;
@@ -418,6 +428,7 @@
             this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditButton.BackColor = System.Drawing.SystemColors.Control;
             this.EditButton.BackgroundImage = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_BlLyZq2Tnx;
             this.EditButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.EditButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
@@ -426,7 +437,7 @@
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(24, 24);
             this.EditButton.TabIndex = 19;
-            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.UseVisualStyleBackColor = false;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // AddTableLayoutPanel
@@ -458,6 +469,55 @@
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 321);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.pictureBox1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.NamesBirthdayPeopleLabel);
+            this.splitContainer2.Panel2.Controls.Add(this.BirtdayLabel);
+            this.splitContainer2.Size = new System.Drawing.Size(510, 90);
+            this.splitContainer2.SplitterDistance = 90;
+            this.splitContainer2.TabIndex = 23;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BackgroundImage = global::ContactsAppUserInterface.Properties.Resources.imgonline_com_ua_Resize_ASXjXaEi6MYq4;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 84);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BirtdayLabel
+            // 
+            this.BirtdayLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BirtdayLabel.AutoSize = true;
+            this.BirtdayLabel.Location = new System.Drawing.Point(14, 31);
+            this.BirtdayLabel.Name = "BirtdayLabel";
+            this.BirtdayLabel.Size = new System.Drawing.Size(120, 13);
+            this.BirtdayLabel.TabIndex = 22;
+            this.BirtdayLabel.Text = "Today is the birthday of ";
+            // 
+            // NamesBirthdayPeopleLabel
+            // 
+            this.NamesBirthdayPeopleLabel.AutoSize = true;
+            this.NamesBirthdayPeopleLabel.Location = new System.Drawing.Point(14, 56);
+            this.NamesBirthdayPeopleLabel.Name = "NamesBirthdayPeopleLabel";
+            this.NamesBirthdayPeopleLabel.Size = new System.Drawing.Size(0, 13);
+            this.NamesBirthdayPeopleLabel.TabIndex = 23;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +546,12 @@
             this.RemoveTableLayoutPanel.ResumeLayout(false);
             this.EditTableLayoutPanel.ResumeLayout(false);
             this.AddTableLayoutPanel.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,6 +591,10 @@
         private System.Windows.Forms.TableLayoutPanel EditTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel AddTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel RemoveTableLayoutPanel;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label BirtdayLabel;
+        private System.Windows.Forms.Label NamesBirthdayPeopleLabel;
     }
 }
 

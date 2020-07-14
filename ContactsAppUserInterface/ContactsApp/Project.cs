@@ -45,5 +45,20 @@ namespace ContactsApp
             }
             return contacts;
         }
+
+        public List<Contact> GetDateBirth(DateTime dateBirth)
+        {
+            var dateBirthContacts = new List<Contact>();
+
+            foreach (var i in Contacts)
+            {
+                if ((i.DateBirth.Day == dateBirth.Day) &&
+                    (i.DateBirth.Month == dateBirth.Month))
+                {
+                    dateBirthContacts.Add(i);
+                }
+            }
+            return dateBirthContacts;
+        }
     }
 }
