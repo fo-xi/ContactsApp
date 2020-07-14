@@ -17,6 +17,8 @@ namespace ContactsAppUserInterface
       /// </summary>
         private Project _project = new Project();
 
+        private List<Contact> _contacts = new List<Contact>();
+
         public MainForm()
         {
             InitializeComponent();
@@ -26,12 +28,12 @@ namespace ContactsAppUserInterface
         {
             var selectedIndex = AllContactsListBox.SelectedIndex;
             if (selectedIndex == -1) return;
-            SurnameTextBox.Text = _project.Contacts[selectedIndex].Surname;
-            NameTextBox.Text = _project.Contacts[selectedIndex].Name;
-            BirthdayDateTimePicker.Value = _project.Contacts[selectedIndex].DateBirth;
-            PhoneTextBox.Text = _project.Contacts[selectedIndex].Number.Number;
-            EmailTextBox.Text = _project.Contacts[selectedIndex].Email;
-            VkIDTextBox.Text = _project.Contacts[selectedIndex].VKID;
+            SurnameTextBox.Text = _contacts[selectedIndex].Surname;
+            NameTextBox.Text = _contacts[selectedIndex].Name;
+            BirthdayDateTimePicker.Value = _contacts[selectedIndex].DateBirth;
+            PhoneTextBox.Text = _contacts[selectedIndex].Number.Number;
+            EmailTextBox.Text = _contacts[selectedIndex].Email;
+            VkIDTextBox.Text = _contacts[selectedIndex].VKID;
         }
 
         private void AddContact()
@@ -50,6 +52,7 @@ namespace ContactsAppUserInterface
         private void AddButton_Click(object sender, EventArgs e)
         {
             AddContact();
+            UpdateListBox();
         }
 
         private void RemoveContact()
@@ -62,7 +65,8 @@ namespace ContactsAppUserInterface
                     "Remove contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
                 {
-                    _project.Contacts.Remove(_project.Contacts[selectedIndex]);
+                    var removeContact = _contacts[selectedIndex];
+                    _project.Contacts.Remove(removeContact);
                     AllContactsListBox.Items.RemoveAt(selectedIndex);
                     SurnameTextBox.Clear();
                     NameTextBox.Clear();
@@ -83,6 +87,7 @@ namespace ContactsAppUserInterface
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             RemoveContact();
+            UpdateListBox();
         }
 
         private void EditContact()
@@ -111,6 +116,7 @@ namespace ContactsAppUserInterface
         private void EditButton_Click(object sender, EventArgs e)
         {
             EditContact();
+            UpdateListBox();
         }
 
         private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,16 +133,19 @@ namespace ContactsAppUserInterface
         private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddContact();
+            UpdateListBox();
         }
 
         private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditContact();
+            UpdateListBox();
         }
 
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RemoveContact();
+            UpdateListBox();
         }
 
         protected override bool ProcessCmdKey(ref Message message, Keys keys)
@@ -175,6 +184,37 @@ namespace ContactsAppUserInterface
             {
                 AllContactsListBox.Items.Add(n.Surname);
             }
+            _project.Contacts = _project.SortingContacts();
+            _contacts = _project.Contacts;
+            UpdateListBox();
+        }
+
+        private void SearchContact()
+        {
+            if (FindTextBox.Text.Length == 0)
+            {
+                _contacts = _project.SortingContacts();
+            }
+            else
+            {
+                _contacts = _project.SortingContacts(FindTextBox.Text);
+            }
+            UpdateListBox();
+        }
+
+        private void UpdateListBox()
+        {
+            AllContactsListBox.Items.Clear();
+            _contacts = _project.SortingContacts();
+            foreach (var i in _contacts)
+            {
+                AllContactsListBox.Items.Add(i.Surname);
+            }
+        }
+
+        private void FindTextBox_TextChanged(object sender, EventArgs e)
+        {
+            SearchContact();
         }
     }
     //TODO: кнопки с пиктограммами слишком большие, картинка для пиктограмм не на прозрачном фоне + видно какую белую рамку (+)

@@ -16,5 +16,34 @@ namespace ContactsApp
         /// Stores a list of all contacts created in the app.
         /// </summary>
         public List<Contact> Contacts { get; set; } = new List<Contact>();
+
+        /// <summary>
+		/// Sorts contacts by the first letter of their last name
+		/// </summary>
+        public List<Contact> SortingContacts()
+        {
+            var contacts = new List<Contact>();
+            var sortedContacts = Contacts.OrderBy(contact => contact.Surname).ToList();
+            foreach (var i in sortedContacts)
+            {
+                contacts.Add(i);
+            }
+            return contacts;
+        }
+
+        public List<Contact> SortingContacts(string substring)
+        {
+            var contacts = new List<Contact>();
+            var sortedContacts = Contacts.OrderBy(contact => contact.Surname).ToList();
+            
+            foreach (var i in sortedContacts)
+            {
+                if ((i.Surname.Contains(substring)) || (i.Name.Contains(substring)))
+                {
+                    contacts.Add(i);
+                }
+            }
+            return contacts;
+        }
     }
 }

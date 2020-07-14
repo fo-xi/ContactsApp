@@ -302,6 +302,7 @@
             this.FindTextBox.Name = "FindTextBox";
             this.FindTextBox.Size = new System.Drawing.Size(236, 20);
             this.FindTextBox.TabIndex = 13;
+            this.FindTextBox.TextChanged += new System.EventHandler(this.FindTextBox_TextChanged);
             // 
             // tableLayoutPanel2
             // 
