@@ -14,7 +14,7 @@ namespace ContactsApp
         /// <summary>
         /// Contains information about the phone number.
         /// </summary>
-        private string _number; //TODO: пустая строка между всеми членами класса (+)
+        private string _number;
 
         /// <summary>
         /// Returns and sets the phone number.

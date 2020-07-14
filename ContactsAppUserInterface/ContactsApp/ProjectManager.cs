@@ -23,8 +23,8 @@ namespace ContactsApp
         /// <summary>
         /// Saves the object <see cref="Project"/> to a file.
         /// </summary>
-        /// <param name="project">All contact information.</param> //TODO: имя параметра в комментарии и имя локальной переменной - исправить (+)
-        public static void WriteToFile(Project project) //TODO: по RSDN правильнее писать public static, а не static public (+)
+        /// <param name="project">All contact information.</param>
+        public static void WriteToFile(Project project)
         {
             if (!Directory.Exists(folder))
             {
@@ -46,9 +46,8 @@ namespace ContactsApp
         /// Reads information about the object <see cref="Project"/>
         /// from a file.
         /// </summary>
-        public static Project ReadFromFile() //TODO: см. выше
+        public static Project ReadFromFile()
         {
-            //TODO: неправильное название переменной - это не контакты (коллекция), а это проект (+)
             Project project = new Project();
             if (File.Exists(Path))
             {
@@ -66,7 +65,7 @@ namespace ContactsApp
                     }
                 }
             }
-            //TODO: почему исключение? При первой установке программы файла с контактами не будет - а из-за исключения этот файл никогда и не создастся. То есть у нового пользователя программа ВСЕГДА будет падать при запуске (+)
+           
             return project;
         }
     }

@@ -19,7 +19,7 @@ namespace ContactsApp
         /// <param name="initialLength">The beginning of the border.</param>
         /// <param name="finalLength">The end of the border.</param>
         public static void AssertStringLength(string value,
-            int initialLength, int finalLength) //TODO: наверно, правильнее будет назвать AssertStringLength, по тому что Range - это всё-таки про числовой диапазон (+)
+            int initialLength, int finalLength)
         {
             if ((value.Length < initialLength) || (value.Length > finalLength))
             {

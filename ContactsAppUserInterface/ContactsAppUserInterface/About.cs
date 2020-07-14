@@ -12,7 +12,6 @@ namespace ContactsAppUserInterface
 {
     public partial class About : Form
     {
-        //TODO: сделать почту и гитхаб ссылками (+)
         public About()
         {
             InitializeComponent();
