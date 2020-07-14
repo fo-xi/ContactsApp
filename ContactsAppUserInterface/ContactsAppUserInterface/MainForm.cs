@@ -52,7 +52,7 @@ namespace ContactsAppUserInterface
         private void AddButton_Click(object sender, EventArgs e)
         {
             AddContact();
-            UpdateListBox();
+            SearchContact();
         }
 
         private void RemoveContact()
@@ -65,8 +65,8 @@ namespace ContactsAppUserInterface
                     "Remove contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
                 {
-                    var removeContact = _contacts[selectedIndex];
-                    _project.Contacts.Remove(removeContact);
+                    var selectedContact = _contacts[selectedIndex];
+                    _project.Contacts.Remove(selectedContact);
                     AllContactsListBox.Items.RemoveAt(selectedIndex);
                     SurnameTextBox.Clear();
                     NameTextBox.Clear();
@@ -87,7 +87,7 @@ namespace ContactsAppUserInterface
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             RemoveContact();
-            UpdateListBox();
+            SearchContact();
         }
 
         private void EditContact()
@@ -96,12 +96,13 @@ namespace ContactsAppUserInterface
             if (selectedIndex != -1)
             {
                 var editContact = new ContactForm();
-                editContact.Contact = _project.Contacts[selectedIndex];
+                var selectedContact = _contacts[selectedIndex];
+                editContact.Contact = selectedContact;
                 editContact.ShowDialog();
                 if (editContact.DialogResult == DialogResult.OK)
                 {
                     AllContactsListBox.Items.RemoveAt(selectedIndex);
-                    _project.Contacts.Remove(_project.Contacts[selectedIndex]);
+                    _project.Contacts.Remove(selectedContact);
                     _project.Contacts.Insert(selectedIndex, editContact.Contact);
                     AllContactsListBox.Items.Insert(selectedIndex, editContact.Contact.Surname);
                 }
@@ -116,7 +117,7 @@ namespace ContactsAppUserInterface
         private void EditButton_Click(object sender, EventArgs e)
         {
             EditContact();
-            UpdateListBox();
+            SearchContact();
         }
 
         private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,19 +134,19 @@ namespace ContactsAppUserInterface
         private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddContact();
-            UpdateListBox();
+            SearchContact();
         }
 
         private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditContact();
-            UpdateListBox();
+            SearchContact();
         }
 
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RemoveContact();
-            UpdateListBox();
+            SearchContact();
         }
 
         protected override bool ProcessCmdKey(ref Message message, Keys keys)
@@ -205,7 +206,6 @@ namespace ContactsAppUserInterface
         private void UpdateListBox()
         {
             AllContactsListBox.Items.Clear();
-            _contacts = _project.SortingContacts();
             foreach (var i in _contacts)
             {
                 AllContactsListBox.Items.Add(i.Surname);
