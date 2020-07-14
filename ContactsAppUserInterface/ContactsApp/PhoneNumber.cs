@@ -28,7 +28,6 @@ namespace ContactsApp
             set
             {
                 Validator.AssertPhoneNumber(value);
-                Validator.AssertStringLength(value, 0, 11);
                 _number = value;
             }
         }

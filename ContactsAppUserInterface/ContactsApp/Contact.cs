@@ -47,8 +47,7 @@ namespace ContactsApp
             }
             set
             {
-                Validator.AssertEmptyString(value);
-                Validator.AssertStringLength(value, 0, 50);
+                Validator.AssertStringLength(value, 1, 50);
                 _surname = Validator.MakeUpperCase(value);
             }
         }
@@ -64,8 +63,7 @@ namespace ContactsApp
             }
             set
             {
-                Validator.AssertEmptyString(value);
-                Validator.AssertStringLength(value, 0, 50);
+                Validator.AssertStringLength(value, 1, 50);
                 _name = Validator.MakeUpperCase(value);
             }
         }
@@ -87,7 +85,7 @@ namespace ContactsApp
             }
             set
             {
-                Validator.AssertDateBirth(value);
+                Validator.AssertDateBirth(value, 1900);
                 _dateBirth = value;
             }
         }
@@ -103,8 +101,7 @@ namespace ContactsApp
             }
             set
             {
-                Validator.AssertEmptyString(value);
-                Validator.AssertStringLength(value, 0, 50);
+                Validator.AssertStringLength(value, 1, 50);
                 _email = value;
             }
         }
@@ -120,8 +117,7 @@ namespace ContactsApp
             }
             set
             {
-                Validator.AssertEmptyString(value);
-                Validator.AssertStringLength(value, 0, 15);
+                Validator.AssertStringLength(value, 1, 15);
                 _vkID = value;
             }
         }
@@ -146,7 +142,6 @@ namespace ContactsApp
             this.Email = email;
             this.VKID = vkID;
         }
-
         /// <summary>
         /// Makes a copy of the object <see cref="Contact"/>
         /// </summary>

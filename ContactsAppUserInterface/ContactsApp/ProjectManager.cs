@@ -65,7 +65,6 @@ namespace ContactsApp
                     }
                 }
             }
-           
             return project;
         }
     }
