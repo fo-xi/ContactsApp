@@ -20,7 +20,7 @@ DefaultGroupName={#Name}
 OutputDir=..\Setup
 OutputBaseFileName=Setup
 
-SetupIconFile=C:\Users\sash\Desktop\Downloads\contact-form.ico
+SetupIconFile=..\Installer\contact-form.ico
 
 Compression=lzma
 SolidCompression=yes
