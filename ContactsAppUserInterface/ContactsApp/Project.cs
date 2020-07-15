@@ -18,7 +18,7 @@ namespace ContactsApp
         public List<Contact> Contacts { get; set; } = new List<Contact>();
 
         /// <summary>
-		/// Sorts contacts by the first letter of their last name
+		/// Sorts contacts by the first letter of their last name.
 		/// </summary>
         public List<Contact> SortingContacts()
         {
@@ -31,6 +31,11 @@ namespace ContactsApp
             return contacts;
         }
 
+        /// <summary>
+		/// Alphabetically sort the list of contacts whose last name 
+        /// or first name contains the specified substring.
+		/// </summary>
+        /// <param name="substring">First or last name substring.</param>
         public List<Contact> SortingContacts(string substring)
         {
             var contacts = new List<Contact>();
@@ -46,6 +51,11 @@ namespace ContactsApp
             return contacts;
         }
 
+        /// <summary>
+        /// Returns a list of all contacts where the date of birth (day and month) 
+        /// matches the date in the input argument
+        /// </summary>
+        /// /// <param name="dateBirth">Date of birth.</param>
         public List<Contact> GetDateBirth(DateTime dateBirth)
         {
             var dateBirthContacts = new List<Contact>();
