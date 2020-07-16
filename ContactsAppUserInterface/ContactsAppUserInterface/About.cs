@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace ContactsAppUserInterface
 {
     public partial class About : Form
-    {
+    { //TODO: неправильное название у класса
         public About()
         {
             InitializeComponent();

@@ -11,12 +11,12 @@ using ContactsApp;
 namespace ContactsAppUserInterface
 {
     public partial class MainForm : Form
-    {
+    {//TODO:  что с табуляцией?
       /// <summary>
       /// Contains a list of all contacts
       /// </summary>
         private Project _project = new Project();
-
+      //TODO: xml
         private List<Contact> _contacts = new List<Contact>();
 
         public MainForm()
@@ -35,10 +35,9 @@ namespace ContactsAppUserInterface
             EmailTextBox.Text = _contacts[selectedIndex].Email;
             VkIDTextBox.Text = _contacts[selectedIndex].VKID;
         }
-
+        //TODO: сначала сделать приватные методы, затем все обработчики //TODO: методам добавить xml
         private void AddContact()
-        {
-            //TODO: зачем в методе аргументы события? (+)
+        { //TODO: неправильное название переменной
             var addContact = new ContactForm();
             addContact.ShowDialog();
             if (addContact.DialogResult == DialogResult.OK)
@@ -57,7 +56,6 @@ namespace ContactsAppUserInterface
 
         private void RemoveContact()
         {
-            //TODO: зачем в методе аргументы? (+)
             var selectedIndex = AllContactsListBox.SelectedIndex;
             if (selectedIndex != -1)
             {
@@ -75,10 +73,9 @@ namespace ContactsAppUserInterface
                     VkIDTextBox.Clear();
                     SaveToFile();
                 }
-}
+            }
             else
-            {
-                //TODO: часть сообщений на русском, часть на английском. Сделать единообразно (+)
+            { //TODO: лучше инвертировать условие, сначала дать сообщение и выход из метода
                 MessageBox.Show("Select a contact from the list", "Warning", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -91,10 +88,10 @@ namespace ContactsAppUserInterface
         }
 
         private void EditContact()
-        { //TODO: зачем сюда передаются сендер и аргументы события? Это аргументы обработчиков, а это должен быть обычный метод (+)
+        {
             var selectedIndex = AllContactsListBox.SelectedIndex;
             if (selectedIndex != -1)
-            {
+            { //TODO: именование переменной
                 var editContact = new ContactForm();
                 var selectedContact = _contacts[selectedIndex];
                 editContact.Contact = selectedContact;
@@ -134,7 +131,7 @@ namespace ContactsAppUserInterface
         private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddContact();
-            SearchContact();
+            SearchContact(); //TODO: если метод обязательно вызывается после Add(), Edit(), Remove(), то почему его не вызывать прямо в этих методах?
         }
 
         private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
@@ -204,7 +201,7 @@ namespace ContactsAppUserInterface
                 }
             }
         }
-
+        //TODO: название говорит, что ищется один контакт, но метод делает совершенно другое. Переименовать
         private void SearchContact()
         {
             if (FindTextBox.Text.Length == 0)
@@ -232,6 +229,4 @@ namespace ContactsAppUserInterface
             SearchContact();
         }
     }
-    //TODO: кнопки с пиктограммами слишком большие, картинка для пиктограмм не на прозрачном фоне + видно какую белую рамку (+)
-    //TODO: форму всё еще нельзя растянуть на весь экран (+)
 }

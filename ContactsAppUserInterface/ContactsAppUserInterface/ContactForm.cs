@@ -11,6 +11,7 @@ using ContactsApp;
 
 namespace ContactsAppUserInterface
 {
+    //TODO: очень странное поведение при растягивании формы. Ты видела, чтобы при растягивании каких-нибудь окон строчки начинали разъезжаться? Сделать нормальную резиновость
     public partial class ContactForm : Form
     {
         /// <summary>
