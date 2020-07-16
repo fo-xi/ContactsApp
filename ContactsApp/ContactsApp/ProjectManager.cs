@@ -14,25 +14,25 @@ namespace ContactsApp
     /// </summary>
     public static class ProjectManager
     {
-        private static readonly string folder = Environment.GetFolderPath
+        private static readonly string _folder = Environment.GetFolderPath
         (Environment.SpecialFolder.ApplicationData) + "\\ContactsApp\\";
 
-        private static readonly string file = "Contacts.txt";
+        private static readonly string _file = "Contacts.txt";
 
-        public static string Path { get; set; } = folder + file;
+        public static string Path { get; set; } = _folder + _file;
         /// <summary>
         /// Saves the object <see cref="Project"/> to a file.
         /// </summary>
         /// <param name="project">All contact information.</param>
         public static void WriteToFile(Project project)
         {
-            if (!Directory.Exists(folder))
+            if (!Directory.Exists(_folder))
             {
-                Directory.CreateDirectory(folder);
+                Directory.CreateDirectory(_folder);
             }
             if (!File.Exists(Path))
             {
-                File.Create(file);
+                File.Create(_file);
             }
             JsonSerializer serializer = new JsonSerializer();
             using (StreamWriter sw = new StreamWriter(Path))
