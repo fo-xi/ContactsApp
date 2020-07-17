@@ -23,7 +23,7 @@ namespace ContactsApp
         {
             if ((value.Length < initialLength) || (value.Length > finalLength))
             {
-                throw new ArgumentException("Value" + value + " " +
+                throw new ArgumentException("Value " + value + " " +
                     "must be in the range from" + " " +
                     initialLength + " " + "to" + " " + finalLength);
             }
@@ -44,8 +44,8 @@ namespace ContactsApp
         {
             if ((value.Length != 11) || (value[0] != '7'))
             {
-                throw new ArgumentException(value + " " +
-                    "The number must contain exactly 11" +
+                throw new ArgumentException(value +
+                    " The number must contain exactly 11" +
                     "digits and start with 7");
             }
         }
@@ -55,7 +55,7 @@ namespace ContactsApp
         {
             if ((value.Year < initialLength) || (value > DateTime.Now))
             {
-                throw new ArgumentException( "Value" + value.Year + " "
+                throw new ArgumentException( "Value " + value.Year + " "
                     + "must be in the range from" + initialLength + "to" + DateTime.Now);
             }
         }

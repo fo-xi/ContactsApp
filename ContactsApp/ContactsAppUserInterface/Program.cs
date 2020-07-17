@@ -9,7 +9,7 @@ namespace ContactsAppUserInterface
     static class Program
     {
         /// <summary>
-        /// Главная точка входа для приложения.
+        /// Main entry point for the app.
         /// </summary>
         [STAThread]
         static void Main()

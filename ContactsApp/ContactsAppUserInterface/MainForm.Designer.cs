@@ -347,7 +347,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(804, 413);
+            this.splitContainer1.Size = new System.Drawing.Size(804, 414);
             this.splitContainer1.SplitterDistance = 284;
             this.splitContainer1.TabIndex = 25;
             // 
@@ -363,7 +363,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(278, 337);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(278, 338);
             this.tableLayoutPanel3.TabIndex = 25;
             // 
             // AllContactsListBox
@@ -385,7 +385,7 @@
             this.RemoveTableLayoutPanel.ColumnCount = 1;
             this.RemoveTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.RemoveTableLayoutPanel.Controls.Add(this.RemoveButton, 0, 0);
-            this.RemoveTableLayoutPanel.Location = new System.Drawing.Point(69, 376);
+            this.RemoveTableLayoutPanel.Location = new System.Drawing.Point(69, 377);
             this.RemoveTableLayoutPanel.Name = "RemoveTableLayoutPanel";
             this.RemoveTableLayoutPanel.RowCount = 1;
             this.RemoveTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -415,7 +415,7 @@
             this.EditTableLayoutPanel.ColumnCount = 1;
             this.EditTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.EditTableLayoutPanel.Controls.Add(this.EditButton, 0, 0);
-            this.EditTableLayoutPanel.Location = new System.Drawing.Point(36, 376);
+            this.EditTableLayoutPanel.Location = new System.Drawing.Point(36, 377);
             this.EditTableLayoutPanel.Name = "EditTableLayoutPanel";
             this.EditTableLayoutPanel.RowCount = 1;
             this.EditTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -446,7 +446,7 @@
             this.AddTableLayoutPanel.ColumnCount = 1;
             this.AddTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.AddTableLayoutPanel.Controls.Add(this.AddButton, 0, 0);
-            this.AddTableLayoutPanel.Location = new System.Drawing.Point(3, 376);
+            this.AddTableLayoutPanel.Location = new System.Drawing.Point(3, 377);
             this.AddTableLayoutPanel.Name = "AddTableLayoutPanel";
             this.AddTableLayoutPanel.RowCount = 1;
             this.AddTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -474,7 +474,7 @@
             this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 320);
+            this.splitContainer2.Location = new System.Drawing.Point(3, 321);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -522,7 +522,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 437);
+            this.ClientSize = new System.Drawing.Size(804, 438);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

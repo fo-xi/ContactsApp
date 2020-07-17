@@ -19,7 +19,7 @@ namespace ContactsAppUserInterface
         private Project _project = new Project();
         //TODO: xml (+)
         /// <summary>
-        /// Additional list for more convenient work with contacts
+        /// Additional list for more convenient work with contacts.
         /// </summary>
         private List<Contact> _contacts = new List<Contact>();
 
@@ -28,7 +28,7 @@ namespace ContactsAppUserInterface
             InitializeComponent();
         }
         /// <summary>
-        /// Saves contact information to a file
+        /// Saves contact information to a file.
         /// </summary>
         private void SaveToFile()
         {
@@ -37,7 +37,7 @@ namespace ContactsAppUserInterface
 
         //TODO: сначала сделать приватные методы, затем все обработчики (+) //TODO: методам добавить xml (+)
         /// <summary>
-        /// Adds contact information to the list and ListBox
+        /// Adds contact information to the list and ListBox.
         /// </summary>
         private void AddContact()
         { //TODO: неправильное название переменной (+)
@@ -52,7 +52,7 @@ namespace ContactsAppUserInterface
             SortingFoundContacts();
         }
         /// <summary>
-        /// Edits contact information to the list and ListBox
+        /// Edits contact information to the list and ListBox.
         /// </summary>
         private void EditContact()
         {
@@ -81,7 +81,7 @@ namespace ContactsAppUserInterface
         }
 
         /// <summary>
-        /// Deletes contact information in the list and ListBox
+        /// Deletes contact information in the list and ListBox.
         /// </summary>
         private void RemoveContact()
         {
@@ -112,7 +112,7 @@ namespace ContactsAppUserInterface
         }
         //TODO: название говорит, что ищется один контакт, но метод делает совершенно другое. Переименовать (+)
         /// <summary>
-        /// Sorts the list of found contacts
+        /// Sorts the list of found contacts.
         /// </summary>
         private void SortingFoundContacts()
         {
@@ -128,7 +128,7 @@ namespace ContactsAppUserInterface
         }
 
         /// <summary>
-        /// Updates contact information in the ListBox
+        /// Updates contact information in the ListBox.
         /// </summary>
         private void UpdateListBox()
         {
