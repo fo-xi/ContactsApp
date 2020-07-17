@@ -11,56 +11,89 @@ using ContactsApp;
 namespace ContactsAppUserInterface
 {
     public partial class MainForm : Form
-    {//TODO:  что с табуляцией?
-      /// <summary>
-      /// Contains a list of all contacts
-      /// </summary>
+    {//TODO:  что с табуляцией? (+)
+        /// <summary>
+        /// Contains a list of all contacts
+        /// </summary>
         private Project _project = new Project();
-      //TODO: xml
+        //TODO: xml (+)
+        /// <summary>
+        /// Additional list for more convenient work with contacts
+        /// </summary>
         private List<Contact> _contacts = new List<Contact>();
 
         public MainForm()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Saves contact information to a file
+        /// </summary>
+        private void SaveToFile()
+        {
+            ProjectManager.WriteToFile(_project);
+        }
 
-        private void AllContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        //TODO: сначала сделать приватные методы, затем все обработчики (+) //TODO: методам добавить xml (+)
+        /// <summary>
+        /// Adds contact information to the list and ListBox
+        /// </summary>
+        private void AddContact()
+        { //TODO: неправильное название переменной (+)
+            var contact = new ContactForm();
+            contact.ShowDialog();
+            if (contact.DialogResult == DialogResult.OK)
+            {
+                _project.Contacts.Add(contact.Contact);
+                AllContactsListBox.Items.Add(contact.Contact.Surname);
+                SaveToFile();
+            }
+            SortingFoundContacts();
+        }
+        /// <summary>
+        /// Edits contact information to the list and ListBox
+        /// </summary>
+        private void EditContact()
         {
             var selectedIndex = AllContactsListBox.SelectedIndex;
-            if (selectedIndex == -1) return;
-            SurnameTextBox.Text = _contacts[selectedIndex].Surname;
-            NameTextBox.Text = _contacts[selectedIndex].Name;
-            BirthdayDateTimePicker.Value = _contacts[selectedIndex].DateBirth;
-            PhoneTextBox.Text = _contacts[selectedIndex].Number.Number;
-            EmailTextBox.Text = _contacts[selectedIndex].Email;
-            VkIDTextBox.Text = _contacts[selectedIndex].VKID;
-        }
-        //TODO: сначала сделать приватные методы, затем все обработчики //TODO: методам добавить xml
-        private void AddContact()
-        { //TODO: неправильное название переменной
-            var addContact = new ContactForm();
-            addContact.ShowDialog();
-            if (addContact.DialogResult == DialogResult.OK)
+            if (selectedIndex == -1)
             {
-                _project.Contacts.Add(addContact.Contact);
-                AllContactsListBox.Items.Add(addContact.Contact.Surname);
-                SaveToFile();
+                MessageBox.Show("Select a contact from the list", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                //TODO: именование переменной (+)
+                var contact = new ContactForm();
+                var selectedContact = _contacts[selectedIndex];
+                contact.Contact = selectedContact;
+                contact.ShowDialog();
+                if (contact.DialogResult == DialogResult.OK)
+                {
+                    AllContactsListBox.Items.RemoveAt(selectedIndex);
+                    _project.Contacts.Remove(selectedContact);
+                    _project.Contacts.Insert(selectedIndex, contact.Contact);
+                    AllContactsListBox.Items.Insert(selectedIndex, contact.Contact.Surname);
+                }
+                SortingFoundContacts();
             }
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            AddContact();
-            SearchContact();
-        }
-
+        /// <summary>
+        /// Deletes contact information in the list and ListBox
+        /// </summary>
         private void RemoveContact()
         {
             var selectedIndex = AllContactsListBox.SelectedIndex;
-            if (selectedIndex != -1)
+            if (selectedIndex == -1)
             {
+                MessageBox.Show("Select a contact from the list", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            { //TODO: лучше инвертировать условие, сначала дать сообщение и выход из метода (+)
                 DialogResult result = MessageBox.Show("Do you really want to remove this contact?",
-                    "Remove contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                "Remove contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
                 {
                     var selectedContact = _contacts[selectedIndex];
@@ -73,77 +106,36 @@ namespace ContactsAppUserInterface
                     VkIDTextBox.Clear();
                     SaveToFile();
                 }
-            }
-            else
-            { //TODO: лучше инвертировать условие, сначала дать сообщение и выход из метода
-                MessageBox.Show("Select a contact from the list", "Warning", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                SortingFoundContacts();
             }
         }
-
-        private void RemoveButton_Click(object sender, EventArgs e)
+        //TODO: название говорит, что ищется один контакт, но метод делает совершенно другое. Переименовать (+)
+        /// <summary>
+        /// Sorts the list of found contacts
+        /// </summary>
+        private void SortingFoundContacts()
         {
-            RemoveContact();
-            SearchContact();
-        }
-
-        private void EditContact()
-        {
-            var selectedIndex = AllContactsListBox.SelectedIndex;
-            if (selectedIndex != -1)
-            { //TODO: именование переменной
-                var editContact = new ContactForm();
-                var selectedContact = _contacts[selectedIndex];
-                editContact.Contact = selectedContact;
-                editContact.ShowDialog();
-                if (editContact.DialogResult == DialogResult.OK)
-                {
-                    AllContactsListBox.Items.RemoveAt(selectedIndex);
-                    _project.Contacts.Remove(selectedContact);
-                    _project.Contacts.Insert(selectedIndex, editContact.Contact);
-                    AllContactsListBox.Items.Insert(selectedIndex, editContact.Contact.Surname);
-                }
+            if (FindTextBox.Text.Length == 0)
+            {
+                _contacts = _project.SortingContacts();
             }
             else
             {
-                MessageBox.Show("Select a contact from the list", "Warning",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _contacts = _project.SortingContacts(FindTextBox.Text);
             }
+            UpdateListBox();
         }
 
-        private void EditButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Updates contact information in the ListBox
+        /// </summary>
+        private void UpdateListBox()
         {
-            EditContact();
-            SearchContact();
-        }
-
-        private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var about = new About();
-            about.ShowDialog();
-        }
-
-        private void FileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AddContact();
-            SearchContact(); //TODO: если метод обязательно вызывается после Add(), Edit(), Remove(), то почему его не вызывать прямо в этих методах?
-        }
-
-        private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            EditContact();
-            SearchContact();
-        }
-
-        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RemoveContact();
-            SearchContact();
+            AllContactsListBox.Items.Clear();
+            foreach (var i in _contacts)
+            {
+                AllContactsListBox.Items.Add(i.Surname);
+            }
         }
 
         protected override bool ProcessCmdKey(ref Message message, Keys keys)
@@ -152,7 +144,7 @@ namespace ContactsAppUserInterface
             {
                 case (Keys.F1):
                 {
-                    var about = new About();
+                    var about = new AboutForm();
                     about.ShowDialog();
                     return true;
                 }
@@ -171,14 +163,63 @@ namespace ContactsAppUserInterface
             return base.ProcessCmdKey(ref message, keys);
         }
 
+        private void AllContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedIndex = AllContactsListBox.SelectedIndex;
+            if (selectedIndex == -1) return;
+            SurnameTextBox.Text = _contacts[selectedIndex].Surname;
+            NameTextBox.Text = _contacts[selectedIndex].Name;
+            BirthdayDateTimePicker.Value = _contacts[selectedIndex].DateBirth;
+            PhoneTextBox.Text = _contacts[selectedIndex].Number.Number;
+            EmailTextBox.Text = _contacts[selectedIndex].Email;
+            VkIDTextBox.Text = _contacts[selectedIndex].VKID;
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            AddContact();
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            RemoveContact();
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            EditContact();
+        }
+
+        private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var about = new AboutForm();
+            about.ShowDialog();
+        }
+
+        private void FileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddContact();
+            //TODO: если метод обязательно вызывается после Add(), Edit(), Remove(), то почему его не вызывать прямо в этих методах? (+)
+        }
+
+        private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditContact();
+        }
+
+        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveContact();
+        }
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveToFile();
-        }
-
-        private void SaveToFile()
-        {
-            ProjectManager.WriteToFile(_project);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -201,32 +242,10 @@ namespace ContactsAppUserInterface
                 }
             }
         }
-        //TODO: название говорит, что ищется один контакт, но метод делает совершенно другое. Переименовать
-        private void SearchContact()
-        {
-            if (FindTextBox.Text.Length == 0)
-            {
-                _contacts = _project.SortingContacts();
-            }
-            else
-            {
-                _contacts = _project.SortingContacts(FindTextBox.Text);
-            }
-            UpdateListBox();
-        }
-
-        private void UpdateListBox()
-        {
-            AllContactsListBox.Items.Clear();
-            foreach (var i in _contacts)
-            {
-                AllContactsListBox.Items.Add(i.Surname);
-            }
-        }
 
         private void FindTextBox_TextChanged(object sender, EventArgs e)
         {
-            SearchContact();
+            SortingFoundContacts();
         }
     }
 }

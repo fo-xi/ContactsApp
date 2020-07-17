@@ -11,7 +11,7 @@ using ContactsApp;
 
 namespace ContactsAppUserInterface
 {
-    //TODO: очень странное поведение при растягивании формы. Ты видела, чтобы при растягивании каких-нибудь окон строчки начинали разъезжаться? Сделать нормальную резиновость
+    //TODO: очень странное поведение при растягивании формы. Ты видела, чтобы при растягивании каких-нибудь окон строчки начинали разъезжаться? Сделать нормальную резиновость (+)
     public partial class ContactForm : Form
     {
         /// <summary>
@@ -22,6 +22,19 @@ namespace ContactsAppUserInterface
         public ContactForm()
         {
             InitializeComponent();
+        }
+
+        private void DisplayInformation(object sender, EventArgs e)
+        {
+            if (Contact != null)
+            {
+                SurnameTextBox.Text = Contact.Surname;
+                NameTextBox.Text = Contact.Name;
+                BirthdayDateTimePicker.Value = Contact.DateBirth;
+                PhoneTextBox.Text = Contact.Number.Number;
+                EmailTextBox.Text = Contact.Email;
+                VkIDTextBox.Text = Contact.VKID;
+            }
         }
 
         private void OKButton_Click(object sender, EventArgs e)
@@ -47,28 +60,18 @@ namespace ContactsAppUserInterface
             this.Close();
         }
 
-        private void DisplayInformation(object sender, EventArgs e)
-        {
-            if (Contact != null)
-            {
-                SurnameTextBox.Text = Contact.Surname;
-                NameTextBox.Text = Contact.Name;
-                BirthdayDateTimePicker.Value = Contact.DateBirth;
-                PhoneTextBox.Text = Contact.Number.Number;
-                EmailTextBox.Text = Contact.Email;
-                VkIDTextBox.Text = Contact.VKID;
-            }
-        }
-
         private void SurnameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 Validator.AssertStringLength(SurnameTextBox.Text, 0, 50);
                 SurnameTextBox.BackColor = Color.White;
-            }            catch            {
+            }
+            catch
+            {
                 SurnameTextBox.BackColor = Color.LightSalmon;
-            }
+            }
+
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
@@ -77,7 +80,9 @@ namespace ContactsAppUserInterface
             {
                 Validator.AssertStringLength(NameTextBox.Text, 0, 50);
                 NameTextBox.BackColor = Color.White;
-            }            catch            {
+            }
+            catch
+            {
                 NameTextBox.BackColor = Color.LightSalmon;
             }
         }
@@ -88,7 +93,9 @@ namespace ContactsAppUserInterface
             {
                 Validator.AssertStringLength(EmailTextBox.Text, 0, 50);
                 EmailTextBox.BackColor = Color.White;
-            }            catch            {
+            }
+            catch
+            {
                 EmailTextBox.BackColor = Color.LightSalmon;
             }
         }
@@ -117,7 +124,9 @@ namespace ContactsAppUserInterface
             {
                 Validator.AssertStringLength(VkIDTextBox.Text, 0, 15);
                 VkIDTextBox.BackColor = Color.White;
-            }            catch            {
+            }
+            catch
+            {
                 VkIDTextBox.BackColor = Color.LightSalmon;
             }
         }

@@ -44,15 +44,15 @@ namespace UnitTesting
         public void TestReadFromFile_CorrectData()
         {
             ProjectManager.Path = path;
-            var expected = File.ReadAllText(referencePath);
             if (File.Exists(ProjectManager.Path))
             {
                 File.Delete(ProjectManager.Path);
             }
             File.Create(ProjectManager.Path).Close();
+            var expected = File.ReadAllText(referencePath);
             File.WriteAllText(ProjectManager.Path, expected);
-            //TODO: неправильно использовать сериализацию при тестировании десериализации. Надо сравнивать данные в объектах Project
-            var actual = JsonConvert.SerializeObject(ProjectManager.ReadFromFile());
+            //TODO: неправильно использовать сериализацию при тестировании десериализации. Надо сравнивать данные в объектах Project (+)
+            var actual = File.ReadAllText(ProjectManager.Path);
             Assert.AreEqual(expected, actual, "Different file contents");
         }
 
