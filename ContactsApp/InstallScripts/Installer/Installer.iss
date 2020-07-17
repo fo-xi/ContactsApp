@@ -1,4 +1,4 @@
-#define   Name       "ContactsAppUserInterface"
+#define   Name       "ContactsApp"
 #define   Version    "0.0.1"
 #define   Publisher  "Dyagay Alexandra"
 #define   URL        "https://github.com/fo-xi"
