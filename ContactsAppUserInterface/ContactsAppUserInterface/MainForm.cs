@@ -139,31 +139,6 @@ namespace ContactsAppUserInterface
             }
         }
 
-        protected override bool ProcessCmdKey(ref Message message, Keys keys)
-        {
-            switch (keys)
-            {
-                case (Keys.F1):
-                {
-                    var about = new AboutForm();
-                    about.ShowDialog();
-                    return true;
-                }
-                case ((Keys.Alt)|(Keys.F4)):
-                {
-                    this.Close();
-                    return true;
-                }
-                case (Keys.Delete):
-                {
-                    RemoveContact();
-                    return true;
-                }
-
-            }
-            return base.ProcessCmdKey(ref message, keys);
-        }
-
         private void AllContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedIndex = AllContactsListBox.SelectedIndex;
@@ -247,6 +222,31 @@ namespace ContactsAppUserInterface
         private void FindTextBox_TextChanged(object sender, EventArgs e)
         {
             SortingFoundContacts();
+        }
+
+        protected override bool ProcessCmdKey(ref Message message, Keys keys)
+        {
+            switch (keys)
+            {
+                case (Keys.F1):
+                    {
+                        var about = new AboutForm();
+                        about.ShowDialog();
+                        return true;
+                    }
+                case ((Keys.Alt) | (Keys.F4)):
+                    {
+                        this.Close();
+                        return true;
+                    }
+                case (Keys.Delete):
+                    {
+                        RemoveContact();
+                        return true;
+                    }
+
+            }
+            return base.ProcessCmdKey(ref message, keys);
         }
     }
 }
