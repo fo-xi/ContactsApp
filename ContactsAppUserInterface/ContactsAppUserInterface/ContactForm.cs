@@ -24,7 +24,7 @@ namespace ContactsAppUserInterface
             InitializeComponent();
         }
 
-        private void DisplayInformation()
+        private void DisplayInformation(object sender, EventArgs e)
         {
             if (Contact != null)
             {
@@ -46,7 +46,7 @@ namespace ContactsAppUserInterface
                             NameTextBox.Text, phoneNumber,
                             BirthdayDateTimePicker.Value, EmailTextBox.Text,
                             VkIDTextBox.Text);
-                this.Close();
+                this.DialogResult = DialogResult.OK;
             }
             catch (ArgumentException exception)
             {
@@ -105,7 +105,6 @@ namespace ContactsAppUserInterface
             try
             {
                 Validator.AssertPhoneNumber(PhoneTextBox.Text);
-                Validator.AssertStringLength(PhoneTextBox.Text, 0, 11);
                 PhoneTextBox.BackColor = Color.White;
             }
             catch
@@ -114,7 +113,10 @@ namespace ContactsAppUserInterface
                 {
                     PhoneTextBox.BackColor = Color.White;
                 }
-                PhoneTextBox.BackColor = Color.LightSalmon;
+                else
+                {
+                    PhoneTextBox.BackColor = Color.LightSalmon;
+                }
             }
         }
 
