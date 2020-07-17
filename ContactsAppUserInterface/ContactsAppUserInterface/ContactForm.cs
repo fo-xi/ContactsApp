@@ -24,7 +24,7 @@ namespace ContactsAppUserInterface
             InitializeComponent();
         }
 
-        private void DisplayInformation(object sender, EventArgs e)
+        private void DisplayInformation()
         {
             if (Contact != null)
             {
