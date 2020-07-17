@@ -8,20 +8,135 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContactsApp;
+
 namespace ContactsAppUserInterface
 {
     public partial class MainForm : Form
-    {
-      /// <summary>
-      /// Contains a list of all contacts
-      /// </summary>
+    {//TODO:  что с табуляцией? (+)
+        /// <summary>
+        /// Contains a list of all contacts
+        /// </summary>
         private Project _project = new Project();
-
+        //TODO: xml (+)
+        /// <summary>
+        /// Additional list for more convenient work with contacts
+        /// </summary>
         private List<Contact> _contacts = new List<Contact>();
 
         public MainForm()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// Saves contact information to a file
+        /// </summary>
+        private void SaveToFile()
+        {
+            ProjectManager.WriteToFile(_project);
+        }
+
+        //TODO: сначала сделать приватные методы, затем все обработчики (+) //TODO: методам добавить xml (+)
+        /// <summary>
+        /// Adds contact information to the list and ListBox
+        /// </summary>
+        private void AddContact()
+        { //TODO: неправильное название переменной (+)
+            var contact = new ContactForm();
+            contact.ShowDialog();
+            if (contact.DialogResult == DialogResult.OK)
+            {
+                _project.Contacts.Add(contact.Contact);
+                AllContactsListBox.Items.Add(contact.Contact.Surname);
+                SaveToFile();
+            }
+            SortingFoundContacts();
+        }
+        /// <summary>
+        /// Edits contact information to the list and ListBox
+        /// </summary>
+        private void EditContact()
+        {
+            var selectedIndex = AllContactsListBox.SelectedIndex;
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("Select a contact from the list", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                //TODO: именование переменной (+)
+                var contact = new ContactForm();
+                var selectedContact = _contacts[selectedIndex];
+                contact.Contact = selectedContact;
+                contact.ShowDialog();
+                if (contact.DialogResult == DialogResult.OK)
+                {
+                    AllContactsListBox.Items.RemoveAt(selectedIndex);
+                    _project.Contacts.Remove(selectedContact);
+                    _project.Contacts.Insert(selectedIndex, contact.Contact);
+                    AllContactsListBox.Items.Insert(selectedIndex, contact.Contact.Surname);
+                }
+                SortingFoundContacts();
+            }
+        }
+
+        /// <summary>
+        /// Deletes contact information in the list and ListBox
+        /// </summary>
+        private void RemoveContact()
+        {
+            var selectedIndex = AllContactsListBox.SelectedIndex;
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show("Select a contact from the list", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            { //TODO: лучше инвертировать условие, сначала дать сообщение и выход из метода (+)
+                DialogResult result = MessageBox.Show("Do you really want to remove this contact?",
+                "Remove contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    var selectedContact = _contacts[selectedIndex];
+                    _project.Contacts.Remove(selectedContact);
+                    AllContactsListBox.Items.RemoveAt(selectedIndex);
+                    SurnameTextBox.Clear();
+                    NameTextBox.Clear();
+                    PhoneTextBox.Clear();
+                    EmailTextBox.Clear();
+                    VkIDTextBox.Clear();
+                    SaveToFile();
+                }
+                SortingFoundContacts();
+            }
+        }
+        //TODO: название говорит, что ищется один контакт, но метод делает совершенно другое. Переименовать (+)
+        /// <summary>
+        /// Sorts the list of found contacts
+        /// </summary>
+        private void SortingFoundContacts()
+        {
+            if (FindTextBox.Text.Length == 0)
+            {
+                _contacts = _project.SortingContacts();
+            }
+            else
+            {
+                _contacts = _project.SortingContacts(FindTextBox.Text);
+            }
+            UpdateListBox();
+        }
+
+        /// <summary>
+        /// Updates contact information in the ListBox
+        /// </summary>
+        private void UpdateListBox()
+        {
+            AllContactsListBox.Items.Clear();
+            foreach (var i in _contacts)
+            {
+                AllContactsListBox.Items.Add(i.Surname);
+            }
         }
 
         private void AllContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,93 +151,24 @@ namespace ContactsAppUserInterface
             VkIDTextBox.Text = _contacts[selectedIndex].VKID;
         }
 
-        private void AddContact()
-        {
-            //TODO: зачем в методе аргументы события? (+)
-            var addContact = new ContactForm();
-            addContact.ShowDialog();
-            if (addContact.DialogResult == DialogResult.OK)
-            {
-                _project.Contacts.Add(addContact.Contact);
-                AllContactsListBox.Items.Add(addContact.Contact.Surname);
-                SaveToFile();
-            }
-        }
-
         private void AddButton_Click(object sender, EventArgs e)
         {
             AddContact();
-            SearchContact();
-        }
-
-        private void RemoveContact()
-        {
-            //TODO: зачем в методе аргументы? (+)
-            var selectedIndex = AllContactsListBox.SelectedIndex;
-            if (selectedIndex != -1)
-            {
-                DialogResult result = MessageBox.Show("Do you really want to remove this contact?",
-                    "Remove contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
-                {
-                    var selectedContact = _contacts[selectedIndex];
-                    _project.Contacts.Remove(selectedContact);
-                    AllContactsListBox.Items.RemoveAt(selectedIndex);
-                    SurnameTextBox.Clear();
-                    NameTextBox.Clear();
-                    PhoneTextBox.Clear();
-                    EmailTextBox.Clear();
-                    VkIDTextBox.Clear();
-                    SaveToFile();
-                }
-}
-            else
-            {
-                //TODO: часть сообщений на русском, часть на английском. Сделать единообразно (+)
-                MessageBox.Show("Select a contact from the list", "Warning", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             RemoveContact();
-            SearchContact();
-        }
-
-        private void EditContact()
-        { //TODO: зачем сюда передаются сендер и аргументы события? Это аргументы обработчиков, а это должен быть обычный метод (+)
-            var selectedIndex = AllContactsListBox.SelectedIndex;
-            if (selectedIndex != -1)
-            {
-                var editContact = new ContactForm();
-                var selectedContact = _contacts[selectedIndex];
-                editContact.Contact = selectedContact;
-                editContact.ShowDialog();
-                if (editContact.DialogResult == DialogResult.OK)
-                {
-                    AllContactsListBox.Items.RemoveAt(selectedIndex);
-                    _project.Contacts.Remove(selectedContact);
-                    _project.Contacts.Insert(selectedIndex, editContact.Contact);
-                    AllContactsListBox.Items.Insert(selectedIndex, editContact.Contact.Surname);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Select a contact from the list", "Warning",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
             EditContact();
-            SearchContact();
         }
 
         private void HelpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var about = new About();
+            var about = new AboutForm();
             about.ShowDialog();
         }
 
@@ -134,54 +180,22 @@ namespace ContactsAppUserInterface
         private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddContact();
-            SearchContact();
+            //TODO: если метод обязательно вызывается после Add(), Edit(), Remove(), то почему его не вызывать прямо в этих методах? (+)
         }
 
         private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditContact();
-            SearchContact();
         }
 
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RemoveContact();
-            SearchContact();
-        }
-
-        protected override bool ProcessCmdKey(ref Message message, Keys keys)
-        {
-            switch (keys)
-            {
-                case (Keys.F1):
-                {
-                    var about = new About();
-                    about.ShowDialog();
-                    return true;
-                }
-                case ((Keys.Alt)|(Keys.F4)):
-                {
-                    this.Close();
-                    return true;
-                }
-                case (Keys.Delete):
-                {
-                    RemoveContact();
-                    return true;
-                }
-
-            }
-            return base.ProcessCmdKey(ref message, keys);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveToFile();
-        }
-
-        private void SaveToFile()
-        {
-            ProjectManager.WriteToFile(_project);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -205,33 +219,34 @@ namespace ContactsAppUserInterface
             }
         }
 
-        private void SearchContact()
-        {
-            if (FindTextBox.Text.Length == 0)
-            {
-                _contacts = _project.SortingContacts();
-            }
-            else
-            {
-                _contacts = _project.SortingContacts(FindTextBox.Text);
-            }
-            UpdateListBox();
-        }
-
-        private void UpdateListBox()
-        {
-            AllContactsListBox.Items.Clear();
-            foreach (var i in _contacts)
-            {
-                AllContactsListBox.Items.Add(i.Surname);
-            }
-        }
-
         private void FindTextBox_TextChanged(object sender, EventArgs e)
         {
-            SearchContact();
+            SortingFoundContacts();
+        }
+
+        protected override bool ProcessCmdKey(ref Message message, Keys keys)
+        {
+            switch (keys)
+            {
+                case (Keys.F1):
+                    {
+                        var about = new AboutForm();
+                        about.ShowDialog();
+                        return true;
+                    }
+                case ((Keys.Alt) | (Keys.F4)):
+                    {
+                        this.Close();
+                        return true;
+                    }
+                case (Keys.Delete):
+                    {
+                        RemoveContact();
+                        return true;
+                    }
+
+            }
+            return base.ProcessCmdKey(ref message, keys);
         }
     }
-    //TODO: кнопки с пиктограммами слишком большие, картинка для пиктограмм не на прозрачном фоне + видно какую белую рамку (+)
-    //TODO: форму всё еще нельзя растянуть на весь экран (+)
 }

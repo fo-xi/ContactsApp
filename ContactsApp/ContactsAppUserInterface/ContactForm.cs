@@ -11,6 +11,7 @@ using ContactsApp;
 
 namespace ContactsAppUserInterface
 {
+    //TODO: очень странное поведение при растягивании формы. Ты видела, чтобы при растягивании каких-нибудь окон строчки начинали разъезжаться? Сделать нормальную резиновость (+)
     public partial class ContactForm : Form
     {
         /// <summary>
@@ -21,29 +22,6 @@ namespace ContactsAppUserInterface
         public ContactForm()
         {
             InitializeComponent();
-        }
-
-        private void OKButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var phoneNumber = new PhoneNumber(PhoneTextBox.Text);
-                Contact = new Contact(SurnameTextBox.Text,
-                            NameTextBox.Text, phoneNumber,
-                            BirthdayDateTimePicker.Value, EmailTextBox.Text,
-                            VkIDTextBox.Text);
-                this.Close();
-            }
-            catch (ArgumentException exception)
-            {
-                MessageBox.Show(exception.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void DisplayInformation(object sender, EventArgs e)
@@ -59,15 +37,41 @@ namespace ContactsAppUserInterface
             }
         }
 
+        private void OKButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var phoneNumber = new PhoneNumber(PhoneTextBox.Text);
+                Contact = new Contact(SurnameTextBox.Text,
+                            NameTextBox.Text, phoneNumber,
+                            BirthdayDateTimePicker.Value, EmailTextBox.Text,
+                            VkIDTextBox.Text);
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (ArgumentException exception)
+            {
+                MessageBox.Show(exception.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void SurnameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 Validator.AssertStringLength(SurnameTextBox.Text, 0, 50);
                 SurnameTextBox.BackColor = Color.White;
-            }            catch            {
+            }
+            catch
+            {
                 SurnameTextBox.BackColor = Color.LightSalmon;
-            }
+            }
+
         }
 
         private void NameTextBox_TextChanged(object sender, EventArgs e)
@@ -76,7 +80,9 @@ namespace ContactsAppUserInterface
             {
                 Validator.AssertStringLength(NameTextBox.Text, 0, 50);
                 NameTextBox.BackColor = Color.White;
-            }            catch            {
+            }
+            catch
+            {
                 NameTextBox.BackColor = Color.LightSalmon;
             }
         }
@@ -87,7 +93,9 @@ namespace ContactsAppUserInterface
             {
                 Validator.AssertStringLength(EmailTextBox.Text, 0, 50);
                 EmailTextBox.BackColor = Color.White;
-            }            catch            {
+            }
+            catch
+            {
                 EmailTextBox.BackColor = Color.LightSalmon;
             }
         }
@@ -97,7 +105,6 @@ namespace ContactsAppUserInterface
             try
             {
                 Validator.AssertPhoneNumber(PhoneTextBox.Text);
-                Validator.AssertStringLength(PhoneTextBox.Text, 0, 11);
                 PhoneTextBox.BackColor = Color.White;
             }
             catch
@@ -106,7 +113,10 @@ namespace ContactsAppUserInterface
                 {
                     PhoneTextBox.BackColor = Color.White;
                 }
-                PhoneTextBox.BackColor = Color.LightSalmon;
+                else
+                {
+                    PhoneTextBox.BackColor = Color.LightSalmon;
+                }
             }
         }
 
@@ -116,7 +126,9 @@ namespace ContactsAppUserInterface
             {
                 Validator.AssertStringLength(VkIDTextBox.Text, 0, 15);
                 VkIDTextBox.BackColor = Color.White;
-            }            catch            {
+            }
+            catch
+            {
                 VkIDTextBox.BackColor = Color.LightSalmon;
             }
         }

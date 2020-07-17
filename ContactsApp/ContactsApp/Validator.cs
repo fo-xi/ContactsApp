@@ -23,7 +23,7 @@ namespace ContactsApp
         {
             if ((value.Length < initialLength) || (value.Length > finalLength))
             {
-                throw new ArgumentException(value + " " +
+                throw new ArgumentException("Value" + value + " " +
                     "must be in the range from" + " " +
                     initialLength + " " + "to" + " " + finalLength);
             }
@@ -42,7 +42,7 @@ namespace ContactsApp
 
         public static void AssertPhoneNumber(string value)
         {
-            if ((value[0] != '7') || (value.Length != 11))
+            if ((value.Length != 11) || (value[0] != '7'))
             {
                 throw new ArgumentException(value + " " +
                     "The number must contain exactly 11" +
@@ -55,7 +55,7 @@ namespace ContactsApp
         {
             if ((value.Year < initialLength) || (value > DateTime.Now))
             {
-                throw new ArgumentException(value.Year + " "
+                throw new ArgumentException( "Value" + value.Year + " "
                     + "must be in the range from" + initialLength + "to" + DateTime.Now);
             }
         }
