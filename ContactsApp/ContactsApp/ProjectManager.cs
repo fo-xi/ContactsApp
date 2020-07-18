@@ -32,7 +32,7 @@ namespace ContactsApp
             }
             if (!File.Exists(Path))
             {
-                File.Create(_file);
+                File.Create(Path).Close();
             }
             JsonSerializer serializer = new JsonSerializer();
             using (StreamWriter sw = new StreamWriter(Path))
