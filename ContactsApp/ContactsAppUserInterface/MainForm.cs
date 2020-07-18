@@ -48,6 +48,7 @@ namespace ContactsAppUserInterface
                 _project.Contacts.Add(contact.Contact);
                 AllContactsListBox.Items.Add(contact.Contact.Surname);
                 SaveToFile();
+                UpdateTextBoxes(contact.Contact);
             }
             SortingFoundContacts();
         }
@@ -75,6 +76,7 @@ namespace ContactsAppUserInterface
                     _project.Contacts.Remove(selectedContact);
                     _project.Contacts.Insert(selectedIndex, contact.Contact);
                     AllContactsListBox.Items.Insert(selectedIndex, contact.Contact.Surname);
+                    UpdateTextBoxes(contact.Contact);
                 }
                 SortingFoundContacts();
             }
@@ -139,16 +141,21 @@ namespace ContactsAppUserInterface
             }
         }
 
+        private void UpdateTextBoxes(Contact contact)
+        {
+            SurnameTextBox.Text = contact.Surname;
+            NameTextBox.Text = contact.Name;
+            BirthdayDateTimePicker.Value = contact.DateBirth;
+            PhoneTextBox.Text = contact.Number.Number;
+            EmailTextBox.Text = contact.Email;
+            VkIDTextBox.Text = contact.VKID;
+        }
+
         private void AllContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedIndex = AllContactsListBox.SelectedIndex;
             if (selectedIndex == -1) return;
-            SurnameTextBox.Text = _contacts[selectedIndex].Surname;
-            NameTextBox.Text = _contacts[selectedIndex].Name;
-            BirthdayDateTimePicker.Value = _contacts[selectedIndex].DateBirth;
-            PhoneTextBox.Text = _contacts[selectedIndex].Number.Number;
-            EmailTextBox.Text = _contacts[selectedIndex].Email;
-            VkIDTextBox.Text = _contacts[selectedIndex].VKID;
+            UpdateTextBoxes(_contacts[selectedIndex]);
         }
 
         private void AddButton_Click(object sender, EventArgs e)
