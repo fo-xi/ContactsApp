@@ -11,6 +11,7 @@ using ContactsApp;
 
 namespace ContactsAppUserInterface
 {
+    //TODO: после добавления нового контакта в список он отображается на правой панели но почему-то не выделен на левой панели
     public partial class MainForm : Form
     {
         /// <summary>
