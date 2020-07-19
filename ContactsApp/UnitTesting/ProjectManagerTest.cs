@@ -15,9 +15,6 @@ namespace UnitTesting
         public static readonly string path =
             Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\Data.txt";
 
-        //TODO: почему название папки ReferencePath?
-        //В переводе Reference file - эталонный фаил
-        //Поэтому папка в которой лежит эталонный фаил называется ReferencePath 
         public static readonly string referencePath =
             Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) 
             + "\\ReferencePath\\Data.txt";
@@ -38,10 +35,7 @@ namespace UnitTesting
                 File.Delete(ProjectManager.Path);
             }
             File.Create(ProjectManager.Path).Close();
-            //TODO: зачем такие сложности? 
-            //Надо просто сериализовать объект проекта с тестовыми данными, 
-            //а затем загрузить в виде строки эталонный файл и созданный файл. 
-            //Десериализации здесь точно быть не должно (+)
+            
             var newProject = new Project();
             newProject.Contacts = new List<Contact>()
             {
@@ -69,8 +63,6 @@ namespace UnitTesting
             var expectedString = File.ReadAllText(referencePath);
             var expectedProject = JsonConvert.DeserializeObject<Project>(expectedString);
             File.WriteAllText(ProjectManager.Path, expectedString);
-            //TODO: неправильно использовать сериализацию при тестировании десериализации. 
-            //Надо сравнивать данные в объектах Project (+)
             var actualProject = ProjectManager.ReadFromFile();
             Assert.AreEqual(expectedProject.Contacts[0].Surname,
                 actualProject.Contacts[0].Surname, "Different file contents");
@@ -79,8 +71,6 @@ namespace UnitTesting
         [Test(Description = "A negative test reading from a file")]
         public void TestReadFromFile_IncorrectData()
         {
-            //TODO: неправильно вызывать сериализацию. 
-            //Надо загружать файл и сравнивать сами объекты Project (+)
             var expected = new Project();
             ProjectManager.Path = incorrectData;
 
@@ -91,9 +81,6 @@ namespace UnitTesting
         [Test(Description = "A test reading to a nonexistent file path")]
         public void TestReadFromFile_NonexistentFilePath()
         {
-            //TODO: несуществующий путь тоже в переменные (+)
-            //TODO: если слэши обозначают подпапки, то они указаны не правильно - нужны двойные слэши (+)
-            //TODO: неправильно здесь использовать сериализацию (+)
             var expected = new Project();
             ProjectManager.Path = nonЕxistentPath;
             var actual = ProjectManager.ReadFromFile();

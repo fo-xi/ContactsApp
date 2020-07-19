@@ -12,12 +12,12 @@ using ContactsApp;
 namespace ContactsAppUserInterface
 {
     public partial class MainForm : Form
-    {//TODO:  что с табуляцией? (+)
+    {
         /// <summary>
         /// Contains a list of all contacts
         /// </summary>
         private Project _project = new Project();
-        //TODO: xml (+)
+        
         /// <summary>
         /// Additional list for more convenient work with contacts.
         /// </summary>
@@ -35,12 +35,12 @@ namespace ContactsAppUserInterface
             ProjectManager.WriteToFile(_project);
         }
 
-        //TODO: сначала сделать приватные методы, затем все обработчики (+) //TODO: методам добавить xml (+)
+        
         /// <summary>
         /// Adds contact information to the list and ListBox.
         /// </summary>
         private void AddContact()
-        { //TODO: неправильное название переменной (+)
+        { 
             var contact = new ContactForm();
             contact.ShowDialog();
             if (contact.DialogResult == DialogResult.OK)
@@ -65,7 +65,7 @@ namespace ContactsAppUserInterface
             }
             else
             {
-                //TODO: именование переменной (+)
+                
                 var contact = new ContactForm();
                 var selectedContact = _contacts[selectedIndex];
                 contact.Contact = selectedContact;
@@ -92,9 +92,10 @@ namespace ContactsAppUserInterface
             {
                 MessageBox.Show("Select a contact from the list", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //TODO: если после if-else нет никакой общей логики, тогда в if можно написать return, а else с лишней вложенностью убрать
             }
             else
-            { //TODO: лучше инвертировать условие, сначала дать сообщение и выход из метода (+)
+            { 
                 DialogResult result = MessageBox.Show("Do you really want to remove this contact?",
                 "Remove contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
@@ -112,7 +113,7 @@ namespace ContactsAppUserInterface
                 SortingFoundContacts();
             }
         }
-        //TODO: название говорит, что ищется один контакт, но метод делает совершенно другое. Переименовать (+)
+        
         /// <summary>
         /// Sorts the list of found contacts.
         /// </summary>
@@ -187,7 +188,6 @@ namespace ContactsAppUserInterface
         private void AddContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddContact();
-            //TODO: если метод обязательно вызывается после Add(), Edit(), Remove(), то почему его не вызывать прямо в этих методах? (+)
         }
 
         private void EditContactToolStripMenuItem_Click(object sender, EventArgs e)
