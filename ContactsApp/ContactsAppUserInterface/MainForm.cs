@@ -11,7 +11,7 @@ using ContactsApp;
 
 namespace ContactsAppUserInterface
 {
-    //TODO: после добавления нового контакта в список он отображается на правой панели но почему-то не выделен на левой панели
+    //TODO: после добавления нового контакта в список он отображается на правой панели но почему-то не выделен на левой панели (+)
     public partial class MainForm : Form
     {
         /// <summary>
@@ -36,12 +36,12 @@ namespace ContactsAppUserInterface
             ProjectManager.WriteToFile(_project);
         }
 
-        
+
         /// <summary>
         /// Adds contact information to the list and ListBox.
         /// </summary>
         private void AddContact()
-        { 
+        {
             var contact = new ContactForm();
             contact.ShowDialog();
             if (contact.DialogResult == DialogResult.OK)
@@ -50,8 +50,21 @@ namespace ContactsAppUserInterface
                 AllContactsListBox.Items.Add(contact.Contact.Surname);
                 SaveToFile();
                 UpdateTextBoxes(contact.Contact);
+                SortingFoundContacts();
+                var selectedIndex = -1;
+                for (int i = 0; i < _contacts.Count; i++)
+                {
+                    if (_contacts[i].Surname == contact.Contact.Surname)
+                    {
+                        selectedIndex = i;
+                        break;
+                    }
+                }
+                if (selectedIndex != -1)
+                {
+                    AllContactsListBox.SetSelected(selectedIndex, true);
+                }
             }
-            SortingFoundContacts();
         }
         /// <summary>
         /// Edits contact information to the list and ListBox.
@@ -93,26 +106,25 @@ namespace ContactsAppUserInterface
             {
                 MessageBox.Show("Select a contact from the list", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //TODO: если после if-else нет никакой общей логики, тогда в if можно написать return, а else с лишней вложенностью убрать
+                return;
+                //TODO: если после if-else нет никакой общей логики, тогда в if можно написать return, а else с лишней вложенностью убрать (+)
             }
-            else
-            { 
-                DialogResult result = MessageBox.Show("Do you really want to remove this contact?",
-                "Remove contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
-                {
-                    var selectedContact = _contacts[selectedIndex];
-                    _project.Contacts.Remove(selectedContact);
-                    AllContactsListBox.Items.RemoveAt(selectedIndex);
-                    SurnameTextBox.Clear();
-                    NameTextBox.Clear();
-                    PhoneTextBox.Clear();
-                    EmailTextBox.Clear();
-                    VkIDTextBox.Clear();
-                    SaveToFile();
-                }
-                SortingFoundContacts();
+
+            DialogResult result = MessageBox.Show("Do you really want to remove this contact?",
+                            "Remove contact", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                var selectedContact = _contacts[selectedIndex];
+                _project.Contacts.Remove(selectedContact);
+                AllContactsListBox.Items.RemoveAt(selectedIndex);
+                SurnameTextBox.Clear();
+                NameTextBox.Clear();
+                PhoneTextBox.Clear();
+                EmailTextBox.Clear();
+                VkIDTextBox.Clear();
+                SaveToFile();
             }
+            SortingFoundContacts();
         }
         
         /// <summary>
