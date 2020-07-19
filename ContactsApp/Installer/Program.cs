@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Installer
 {
+    //TODO: скрипт iss со сборке установщика имеет смысл поместить в папку этого проекта, и добавить в проект
     class Program
     {
         static void Main(string[] args)
