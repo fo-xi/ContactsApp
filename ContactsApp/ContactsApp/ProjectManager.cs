@@ -44,7 +44,7 @@ namespace ContactsApp
 
         /// <summary>
         /// Reads information about the object <see cref="Project"/>
-        /// from a file.
+        /// from a file
         /// </summary>
         public static Project ReadFromFile()
         {
